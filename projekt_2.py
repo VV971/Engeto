@@ -22,7 +22,7 @@ def get_digits_from_number(num):
     """
     Funkce, která vrací seznam číslic ze zadaného čtyřmístného čísla.
     """ 
-    return [int(var_i) for var_i in str(num)]
+    return [int(i) for i in str(num)]
 
 #Definuji funkci, která ověřuje, že se v zadaném čísle neopakují jednotlivé číslice
 def no_duplicate_number(num):
@@ -70,7 +70,7 @@ def verify_correct_number_format(input_number):
             print("Duplicated numbers are not allowed.")
             continue
         else:
-            print("You entered a correct number.")
+            print(">>> ", guessed_number)
             correct_input = False
             return int(guessed_number)
 
@@ -105,7 +105,6 @@ print(secret_number)
 #V hádání čísla pokračuji do jeho uhádnutí
 var_l = 0
 bulls_cows = [0, 0]
-print(bulls_cows[0])
 while bulls_cows[0] < 4:
     input_number = input("Enter your 4 digit numer:")
     var_l += 1
@@ -113,8 +112,19 @@ while bulls_cows[0] < 4:
         #Volám funkci pro porovnání zadaného čísla s tajným číslem
         bulls_cows = count_bulls_cows(secret_number, input_number)
         #Tisknu výsledek hádání 
-        print(f"{bulls_cows[0]} bulls, {bulls_cows[1]} cows")
+        if bulls_cows[0] == 1:
+            wording_bulls = 'bull'
+        else:
+            wording_bulls = 'bulls'
+        if bulls_cows[1] == 1:
+            wording_cows = 'cow'
+        else:
+            wording_cows = 'cows'
+        print(f"{bulls_cows[0]} {repr(wording_bulls).strip('"\'')}, {bulls_cows[1]} {repr(wording_cows).strip('"\'')}")
+        print("-" * len(welcome_text_I))
 else: 
     #Pokud se všechna čtyři čísla v tajném i zadaném čísle shodují, tak ukončuji hru
     if bulls_cows[0] == 4: 
         print("Correct, you've guessed the right number in", var_l, "guesses!")
+"""
+Zbývá ošetřit crash ve fci "get_digits_from_number", asi při doplnění nějakého neviditelného znaku"""
