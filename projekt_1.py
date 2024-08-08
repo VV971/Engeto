@@ -124,7 +124,7 @@ else:
         var_sum_numeric = 0
         for var_j in range(0, (int(len(l_text_selected)))):
             #Počet slov začínajících velkým písmenem
-            if l_text_selected[var_j][:1].istitle() is True:
+            if l_text_selected[var_j][:1].isupper() is True:
                 var_count_titlecase = var_count_titlecase + 1
             else:
                 var_count_titlecase
