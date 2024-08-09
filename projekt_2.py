@@ -125,7 +125,7 @@ var_l = 0
 bulls_cows = [0, 0]
 #V hádání čísla pokračuji do jeho uhádnutí
 while bulls_cows[0] < 4:
-    #Vyzývým uživatele k zadání jeho čísla
+    #Vyzývám uživatele k zadání jeho čísla
     input_number = input("Enter your 4 digit numer:")
     #Začínám měření času do uhádnutí tajného čísla
     start = timeit.default_timer()
