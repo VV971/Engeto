@@ -154,4 +154,3 @@ else:
         print("Correct, you've guessed the right number in", var_l, "guesses!")
         var_elapsed_time = round(end - start, 2)
         print(f"You needed {var_elapsed_time} seconds to guess the secret number.")
-        #print("You needed", round(var_elapsed_time, 2), "seconds to guess the secret number.")
