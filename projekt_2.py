@@ -48,7 +48,7 @@ def verify_correct_number_format(input_number):
     """
     #Připravuji vstupy pro cyklus
     correct_input = True
-    #Definuji pomocnou proměnnou pro případné opakováné zadávání čísla
+    #Definuji pomocnou proměnnou pro případné opakované zadávání čísla
     var_k = 0
     #Začínám cyklus vyhodnocování, jestli zadané číslo splňuje všechny požadavky na správný formát
     while correct_input:
@@ -118,17 +118,17 @@ def count_bulls_cows(secret_number, input_number):
 #Generuji tajné číslo k uhádnutí
 secret_number = generate_four_digit_number()
 #Zakomentovaný tisk pro rychlejší debuggování 
-print(secret_number)
+#print(secret_number)
 
 #Začínám hádat tajné číslo
 var_l = 0
 bulls_cows = [0, 0]
+#Začínám měření času do uhádnutí tajného čísla
+start = timeit.default_timer()
 #V hádání čísla pokračuji do jeho uhádnutí
 while bulls_cows[0] < 4:
     #Vyzývám uživatele k zadání jeho čísla
     input_number = input("Enter your 4 digit numer:")
-    #Začínám měření času do uhádnutí tajného čísla
-    start = timeit.default_timer()
     var_l += 1
     #Pokud číslo projde ověřením, tak ho předám k porovnání s tajným číslem
     if (type(verify_correct_number_format(input_number)) == int) is True:
