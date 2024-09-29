@@ -19,9 +19,7 @@ import csv
 #Importuji knihovnu os pro používání funkcionalit závislých na OS
 import os
 
-#Uživatelsky definované funkce
-
-#Ověření url odkazu zadaného uživatelem
+#Definuji funkci, která ověří url odkaz zadaný uživatelem
 def overeni_url(url: str) -> bool:
     """
     Funkce kontroluje, že zadané url je funkční pomocí statusového kódu a vrátí True nebo False.
@@ -30,83 +28,78 @@ def overeni_url(url: str) -> bool:
     try:
         response = requests.get(url)
         return response.status_code == 200
-    #Pro vyjímky způsobené NOK odpovědí všechny ostatní statusové kódy 
+    #Všechny ostatní statusové kódy pro vyjímky způsobené NOK odpovědí  
     except requests.exceptions.RequestException:
         return False
 
-def validate_command_line_arguments() -> tuple:
-    """This function validates the command line arguments and return the URL and file name as a tuple."""
-    parser = argparse.ArgumentParser(description="Validate command line arguments.")
-    parser.add_argument("url", type=str, help="The URL to validate.")
-    parser.add_argument("file_name", type=str, help="The file name to validate.")
+#Definuji funkci, která ověří platnost argumentů z příkazového řásku
+def overeni_argumentu() -> tuple:
+    """
+    Funkce ověří argumenty zadané pomocí příkazové řádky a vrátí url a jméno souboru jako tuple.
+    """
+    parser = argparse.ArgumentParser(description = "Ověření argumentů z příkazové řádky.")
+    parser.add_argument("url", type = str, help = "url k ověření.")
+    parser.add_argument("file_name", type = str, help = "Jméno souboru k ověření.")
     args = parser.parse_args()
     url, file_name = args.url, args.file_name
 
     expected_core_url = "https://www.volby.cz/pls/ps2017nss/"
     match = re.match(expected_core_url, url)
     if not match:
-        raise ValueError(
-            f'Invalid URL. Expected URL to start with "{expected_core_url}", got "{url}"'
-        )
-
+        raise ValueError(f'Nesprávné url. Je očekáván odkaz začínající "{expected_core_url}", ale bylo zadáno "{url}"')
     if not file_name.endswith(".csv"):
-        raise ValueError(
-            f"Invalid file type. Expected .csv, got {os.path.splitext(file_name)[1]}"
-        )
-
-    if not validate_url(url):
-        raise ValueError(f"Invalid URL: {url}")
-
+        raise ValueError(f"Nesprávný typ souboru. Je očekáváno .csv, ale bylo zadáno {os.path.splitext(file_name)[1]}")
+    if not overeni_url(url):
+        raise ValueError(f"Nesprávné url: {url}")
     return url, file_name
 
-
-def city_names_scraper(url) -> list:
-    """The function city_names_scraper performs following tasks:
-    1. takes a URL as input and returns a list of city codes and names
-    2. It uses the requests library to get the HTML content from the URL and parse it using the BeautifulSoup library.
-    3.The function finds all elements with the class "cislo" and extracts the text to get the city codes.
-    4.Similarly, it finds all elements with the class "overflow_name" and extracts the text to get the city names.
-    5.Finally, it combines the city codes and names in a list and returns the result."""
-
-    response = requests.get(url)
-    doc = BeautifulSoup(response.text, "html.parser")
-    city_codes = [city.text for city in doc.find_all("td", class_="cislo")]
-    city_names = [city.text for city in doc.find_all("td", class_="overflow_name")]
-    city_list = [city_codes, city_names]
-    return city_list
-
-
-def get_city_url(url: str) -> list[str]:
-    """This function performs following tasks:
-     1) It starts by defining a core_url which will be used as the base for all the city URLs that will be extracted.
-     2) It defines a list of tables that contain strings representing table headers.
-     3) The BeautifulSoup object (doc) is used to search for all 'td' elements that have the class "cislo"
-     and a header specified in the tables list.
-     4) For each matching 'td' element, the function searches for an 'a' element within it, and if found,
-     it appends the 'href' attribute to the core_url to form a complete city URL.
-     5) Finally, the function returns the city_url list, which now contains all the city URLs from the web page.
-
-    :param url:URL from which to scrape city URLs.
-    :return: List of city URLs.
+#Definuji funkci, která ze zadaného url získá kód a jméno města
+def scraper_jmena_obci(url) -> list:
     """
+    Funkce získá ze zadaného url získá kód (všechny prvky s třídou "cislo") a jméno města (všechny prvky s třídou "overflow_name").
+    """
+    odpoved = requests.get(url).text
+    data = BeautifulSoup(odpoved, "html.parser")
+    #Získávám kódy obcí
+    kody_obci = [mesto.text for mesto in data.find_all("td", class_ = "cislo")]
+    #Získávám názvy obcí
+    jmena_obci = [mesto.text for mesto in data.find_all("td", class_ = "overflow_name")]
+    #Vytvářím seznam s kódy a názvy obcí
+    seznam_obci = [kody_obci, jmena_obci]
+    #print(seznam_obci)
+    return seznam_obci
 
-    core_url = "https://www.volby.cz/pls/ps2017nss/"
+#Definuji funkci, která vytvoří url pro všechny obce nalezené v okrese
+def ziskej_url_obce(url: str) -> list[str]:
+    """
+    Funkce přijímá jako argument url pro okres a vytvoří seznam s url pro všechny obce nalezené v tomto okrese.
+    """
+    #Vytvářím neměnné jádro url
+    jadro_url = "https://www.volby.cz/pls/ps2017nss/"
+    #Definuji seznam tabulek, které obsahují řetězce s hlavičkami tabulek 
     tables = ["t1sa1 t1sb1", "t2sa1 t2sb1", "t3sa1 t3sb1"]
-    response = requests.get(url)
-    doc = BeautifulSoup(response.text, "html.parser")
-    city_url = []
+    #Získávám odpověď z webového serveru
+    odpoved = requests.get(url).text
+    #Parsuji odpověď
+    data = BeautifulSoup(odpoved, "html.parser")
+    url_obce = []
     for table in tables:
-        for td in doc.find_all("td", class_="cislo", headers=table):
+        #Hledám každou hodnotu td třídy "cislo" a hlavičku specifikovanou v seznamu tabulek
+        for td in data.find_all("td", class_="cislo", headers = table):
+            #Pro každý odpovídající prvek "td" hledám tag "a"
             a = td.find("a")
             if a:
-                city_url.append(core_url + a["href"])
-    return city_url
+                #Pokud tag "a" existuje, tak z jádra url a hodnoty href složím kompletní url pro danou obec
+                url_obce.append(jadro_url + a["href"])
+    #print(url_obce)
+    #Vracím seznam s url pro všechny obce v okrese
+    return url_obce
 
 
 def voter_turnout_data(city_url) -> list:
     """This function performs following tasks:
-     1) The function uses the BeautifulSoup library and the requests library to extract data from the city URLs.
-     2) For each URL the function finds all the elements with the class "cislo" and headers "sa2", "sa3", and "sa6".
+     1) The function uses the BeautifulSoup library and the requests library to extract data from the city urls.
+     2) For each url the function finds all the elements with the class "cislo" and headers "sa2", "sa3", and "sa6".
      3) The data is collected in the form of three lists: `registered_voters`, `ballot_papers`, and `valid_votes`.
      4) The function returns a list of lists `data_collection` which contains individual lists
 
@@ -153,7 +146,7 @@ def voter_turnout_data(city_url) -> list:
 
 def get_political_parties(city_url: list) -> list[str]:
     """This function performs following tasks:
-    1) The function extracts data from the first city URL in the `city_url` list.
+    1) The function extracts data from the first city url in the `city_url` list.
     2) It finds all the elements with the class "overflow_name" and headers "t1sa1 t1sb2" and "t2sa1 t2sb2".
     3) Finally, The political party names are stored in a list `political_parties`.
 
@@ -178,7 +171,7 @@ def get_political_parties(city_url: list) -> list[str]:
 
 def get_votes(city_url: list) -> list:
     """This function performs following tasks:
-    1) The function finds for each city URL all elements with the class "cislo"
+    1) The function finds for each city url all elements with the class "cislo"
     and headers "t1sa2 t1sb3" and "t2sa2 t2sb3" representing votes each political party received in the particular city.
     2) The vote counts are collected in a list `total_votes` for each city in the selected district.
 
@@ -243,7 +236,7 @@ def main() -> None:
     """The main function performs following tasks:
          1) It validates the command line arguments
          2) scrapes city names
-         3) retrieves city URLs
+         3) retrieves city urls
          4) collects voter turnout data
          5) retrieves political parties
          6) retrieves votes from individual cities
@@ -254,7 +247,7 @@ def main() -> None:
     try:
         url, file_name = validate_command_line_arguments()
         print(
-            f'Initializing program with URL "{url}" and file name "{file_name}"\n'
+            f'Initializing program with url "{url}" and file name "{file_name}"\n'
             f"Extracting data...")
         city_list = city_names_scraper(url)
         city_url = get_city_url(url)
