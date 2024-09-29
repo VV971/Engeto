@@ -69,6 +69,22 @@ def scraper_jmena_obci(url) -> list:
     #print(seznam_obci)
     return seznam_obci
 
+#Definuji funkci, která ze zadaného url získá kód a jméno města
+def scraper_jmena_obci(url) -> list:
+    """
+    Funkce získá ze zadaného url získá kód (všechny prvky s třídou "cislo") a jméno města (všechny prvky s třídou "overflow_name").
+    """
+    odpoved = requests.get(url).text
+    data = BeautifulSoup(odpoved, "html.parser")
+    #Získávám kódy obcí
+    kody_obci = [mesto.text for mesto in data.find_all("td", class_ = "cislo")]
+    #Získávám názvy obcí
+    jmena_obci = [mesto.text for mesto in data.find_all("td", class_ = "overflow_name")]
+    #Vytvářím seznam s kódy a názvy obcí
+    seznam_obci = [kody_obci, jmena_obci]
+    #print(seznam_obci)
+    return seznam_obci
+
 #Definuji funkci, která vytvoří url pro všechny obce nalezené v okrese
 def ziskej_url_obce(url: str) -> list[str]:
     """
@@ -96,14 +112,14 @@ def ziskej_url_obce(url: str) -> list[str]:
     return url_obce
 
 #Definuji funkci, která získá data o průběhu voleb v dané obci
-def volebni_data_v_obci(url_obce) -> list:
+def volby_v_obci_prehled(url_obce) -> list:
     """
     Funkce pomocí knihoven "requests" a "BeautifulSoup" najde z url pro danou obec všechny prvky s třídou "class"
     a hlavičkami "sa2" -> "Voliči v seznamu", "sa3" -> "Vydané obálky", "sa6" -> "Platné hlasy". Poté z dat pro 
     jednotlivé obce vytvoří tři seznamy ("volici_v_seznamu", "vydane_obalky", "platne_hlasy") a z nich nakonec 
     vytvoří jeden kompletní seznam "Data".
     """
-    #Nuluji seznam voličů
+    #Vytvářím prázdný seznam
     volici_v_seznamu = []
     for i in url_obce:
         odpoved = requests.get(i).text
@@ -112,7 +128,7 @@ def volebni_data_v_obci(url_obce) -> list:
         volici = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "cislo", headers = "sa2")]
         #Přidávám číslo za obec do seznamu voličů
         volici_v_seznamu.extend(volici)
-    #Nuluji seznam vydaných obálek
+    #Vytvářím prázdný seznam
     vydane_obalky = []
     for i in url_obce:
         odpoved = requests.get(i).text
@@ -121,7 +137,7 @@ def volebni_data_v_obci(url_obce) -> list:
         obalky = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "cislo", headers = "sa3")]
         #Přidávám číslo za obec do seznamu
         vydane_obalky.extend(obalky)
-    #Nuluji seznam platných hlasů
+    #Vytvářím prázdný seznam
     platne_hlasy = []
     for i in url_obce:
         odpoved = requests.get(i).text
@@ -136,87 +152,72 @@ def volebni_data_v_obci(url_obce) -> list:
     return Data
 
 #Definuji funkci, která získá jména politických stran, jejichž kandidáti se účastnili voleb
-def politicke_strany(url_obce: list) -> list[str]:
+def seznam_politickych_stran(url_obce: list) -> list[str]:
     """
-    Funkce pomocí knihoven "requests" a "BeautifulSoup" najde z url pro danou obec všechny prvky s třídou 
-    "overflow_name" a hlavičkami "t1sa1 t1sb2" a "t2sa1 t2sb2" a poté data uloží do seznamu "politicke_strany".
+    Funkce pomocí knihoven "requests" a "BeautifulSoup" najde z url pro danou obec všechny prvky s třídou "overflow_name"
+    a hlavičkami "t1sa1 t1sb2" a "t2sa1 t2sb2" a poté data uloží do seznamu "politicke_strany".
     """
     #Vytvářím prázdný seznam
     politicke_strany = []
     odpoved = requests.get(url_obce[0]).text
     data = BeautifulSoup(odpoved, "html.parser")
     #První tabulka
-    table1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "overflow_name", headers = "t1sa1 t1sb2")]
+    table_1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "overflow_name", headers = "t1sa1 t1sb2")]
     #Druhá tabulka
-    table2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="overflow_name", headers="t2sa1 t2sb2")]
+    table_2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="overflow_name", headers="t2sa1 t2sb2")]
     #Slučuji tabulky
-    politicke_strany.extend(table1 + table2)
+    politicke_strany.extend(table_1 + table_2)
     #print(politicke_strany)
     return politicke_strany
 
+#Definuji funkci, která získá počty hlasů pro každou politickou stranu v dané obci
+def secti_hlasy(url_obce: list) -> list:
+    """
+    Funkce pomocí knihoven "requests" a "BeautifulSoup" najde z url pro danou obec všechny prvky s třídou "cislo"
+    a hlavičkami "t1sa2 t1sb3" a "t2sa2 t2sb3" a poté data uloží do seznamu "pocet_hlasu".
+    """
+    pocet_hlasu = []
+    for i in url_obce:
+        odpoved = requests.get(i).text
+        data = BeautifulSoup(odpoved, "html.parser")
+        table_1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="cislo", headers="t1sa2 t1sb3")]
+        table_2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="cislo", headers="t2sa2 t2sb3")]
+        pocet_hlasu.append(table_1 + table_2)
+    #print(pocet_hlasu)
+    return pocet_hlasu
 
-def get_votes(city_url: list) -> list:
-    """This function performs following tasks:
-    1) The function finds for each city url all elements with the class "cislo"
-    and headers "t1sa2 t1sb3" and "t2sa2 t2sb3" representing votes each political party received in the particular city.
-    2) The vote counts are collected in a list `total_votes` for each city in the selected district.
-
-    :return: list of vote counts"""
-    total_votes = []
-    for i in city_url:
-        response_2 = requests.get(i)
-        doc_2 = BeautifulSoup(response_2.text, "html.parser")
-        table1 = [
-            j.text.replace("\xa0", "")
-            for j in doc_2.find_all("td", class_="cislo", headers="t1sa2 t1sb3")
-        ]
-        table2 = [
-            j.text.replace("\xa0", "")
-            for j in doc_2.find_all("td", class_="cislo", headers="t2sa2 t2sb3")
-        ]
-        total_votes.append(table1 + table2)
-    return total_votes
-
-def write_csv(
-    file_name, city_list, data_collection, political_parties, total_votes
-) -> None:
-    """This function writes data collected from websites to a CSV file.
-    Parameters:
-    1) file_name (str): The name of the CSV file to be written.
-    2) city_list (list): A list of two lists, the first list contains city codes, the second list contains city names.
-    3) data_collection (list): A list of three lists, the first list contains registered voters, the second list contains issued ballots, and the third list contains valid votes.
-    4) political_parties (list): A list of political parties.
-    5) total_votes (list): A list of lists, each inner list contains the total votes for each political party in a city.
-    6) head (list): A list of header names"""
-
-    head = [
-        "City Code",
-        "City Name",
-        "Registered Voters",
-        "Issued Ballots",
-        "Valid Votes",
-    ]
+#Definuji funkci, která zapíše sesbíraná data do csv souboru
+def zapis_csv(nazev_souboru, seznam_obci, Data, politicke_strany, pocet_hlasu) -> None:
+    """
+    Funkce zapíše sesbíraná data do csv souboru dle vstupnách parametrů.
+    """
+    head = ["Kod obce", "Nazev obce", "Pocet volicu v seznamu", "Vydane obalky", "Platne hlasy"]
     current_directory = os.getcwd()
-    file_path = os.path.join(current_directory, file_name)
-    with open(file_name, "w", newline="") as file:
+    file_path = os.path.join(current_directory, nazev_souboru)
+    with open(nazev_souboru, "w", newline = "", encoding = "utf-8") as file:
         writer = csv.writer(file)
-        writer.writerow(head + political_parties)
-        for i in range(len(city_list[0])):
+        writer.writerow(head + politicke_strany)
+        for i in range(len(seznam_obci[0])):
             writer.writerow(
-                [city_list[0][i], city_list[1][i]]
-                + [data_collection[0][i]]
-                + [data_collection[1][i]]
-                + [data_collection[2][i]]
-                + total_votes[i]
+                [seznam_obci[0][i], seznam_obci[1][i]]
+                + [Data[0][i]]
+                + [Data[1][i]]
+                + [Data[2][i]]
+                + pocet_hlasu[i]
             )
-    print(
-        f"Your file {file_name} has been successfully generated and stored in the following directory:{file_path}"
-    )
+    print(f"Soubor {nazev_souboru} byl úspěšně vytvořen a uložen v:{file_path}")
+
+url = 'https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=6&xnumnuts=4204'
+
+url_obce = ziskej_url_obce(url)
+seznam_obci = scraper_jmena_obci(url)
+Data = volby_v_obci_prehled(url_obce)
+politicke_strany = seznam_politickych_stran(url_obce)
+pocet_hlasu = secti_hlasy(url_obce)
+soubor = zapis_csv(nazev_souboru, seznam_obci, Data, politicke_strany, pocet_hlasu)
 
 
 # main function which runs the program
-
-
 def main() -> None:
     """The main function performs following tasks:
          1) It validates the command line arguments
