@@ -4,24 +4,6 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Vít Vogner
 email: vit.vogner@gmx.com
 discord: jovial_otter_10639
-
-II. hodnocení:
-1. Přihlášení nefunkční: 
-    a) zkoušel jsem zadat username: bob a password: 12 - program se neukončil řízeně, ale spadl s NameError: name 'var_login' is not defined - způsobené do jaké podmínky to spadá
-    b) zkoušel jsem zadat username: bob a password: pass123 - program mě úspěšně přihlásil (heslo k username bob je 123)
-2. Neošetřeny uživatelské vstupy: když při výběru textu zadám písmeno, program neočekávaně spadne s chybou ValueError: invalid literal for int() with base 10: 's', je potřeba to mít pohlídané a buď nechat uživatele opakovat, nebo řízeně ukončit program.
-3. Nesedí statistika pro slova začínající velkým písmenem There are 11 titlecase words. má jich být 12
-
-Závěr: Projekt má celkově dobrý základ, ale určitě je potřeba opravit přihlášení a statistiky.
-
-I. Hodnocení:
-1. Projekty odevzdávat v v souboru .py tedy Pythonovským ne v notebooku
-2. Neošetřeny uživatelské vstupy: když při výběru textu zadám písmeno, program neočekávaně spadne s chybou ValueError: invalid literal for int() with base 10: 's', je potřeba to mít pohlídané a buď nechat uživatele opakovat, nebo řízeně ukončit program.
-3. Jednotlivý uživatelé v samostatných proměnných: když jich bude 1000 to budeš dělat proměnné d_user_1 ..... d_user_1000. Toto není efektivní přístup
-4. Statistika pro slova začínající velkým písmem: There are 12 titlecase words. ['Situated', 'Kemmerer', 'Fossil', 'Butte', 'Twin', 'Creek', 'Valley', 'The', '30N', 'Union', 'Pacific', 'Railroad'] - 30N nezačíná velkým písmenem. Pozor na metodu istitle, jak se chová.
-5. V grafu nesedí počty: způsobeno, že neodstraňuješ všechny nežádoucí znaky, ale jen čárky.
-
-Závěr: Projekt má dobrý základ, ale je potřeba implementovat pár zlepšení. Určitě se jedná o body zlepšení 1, 2, 3 a 5. Budu se těšit na opravený kód, pokud budeš potřebovat něco dovysvětlit určitě mi napiš. Projekt neschvaluji.
 """
 #Importuji knihovnu sys pro využití funkce exit
 import sys
