@@ -56,7 +56,7 @@ def overeni_argumentu() -> tuple:
 #Definuji funkci, která ze zadaného url získá kód a jméno města
 def scraper_jmena_obci(url) -> list:
     """
-    Funkce získá ze zadaného url získá kód (všechny prvky s třídou "cislo") a jméno města (všechny prvky s třídou "overflow_name").
+    Funkce získá ze zadaného url kód (všechny prvky s třídou "cislo") a jméno města (všechny prvky s třídou "overflow_name").
     """
     odpoved = requests.get(url).text
     data = BeautifulSoup(odpoved, "html.parser")
@@ -95,78 +95,64 @@ def ziskej_url_obce(url: str) -> list[str]:
     #Vracím seznam s url pro všechny obce v okrese
     return url_obce
 
-
-def voter_turnout_data(city_url) -> list:
-    """This function performs following tasks:
-     1) The function uses the BeautifulSoup library and the requests library to extract data from the city urls.
-     2) For each url the function finds all the elements with the class "cislo" and headers "sa2", "sa3", and "sa6".
-     3) The data is collected in the form of three lists: `registered_voters`, `ballot_papers`, and `valid_votes`.
-     4) The function returns a list of lists `data_collection` which contains individual lists
-
-    :return: a list of lists containing the voter turnout data."""
-
-    registered_voters = (
-        []
-    )  # this line of code scrapes the number of registered voters in a particular city
-    for i in city_url:
-        response_2 = requests.get(i)
-        doc_2 = BeautifulSoup(response_2.text, "html.parser")
-        voters = [
-            j.text.replace("\xa0", "")
-            for j in doc_2.find_all("td", class_="cislo", headers="sa2")
-        ]
-        registered_voters.extend(voters)
-
-    ballot_papers = (
-        []
-    )  # this line of code scrapes the number of issued ballot papers in a particular city
-    for i in city_url:
-        response_2 = requests.get(i)
-        doc_2 = BeautifulSoup(response_2.text, "html.parser")
-        papers = [
-            j.text.replace("\xa0", "")
-            for j in doc_2.find_all("td", class_="cislo", headers="sa3")
-        ]
-        ballot_papers.extend(papers)
-
-    valid_votes = (
-        []
-    )  # this line of code scrapes the number of valid votes cast in election in a particular city
-    for i in city_url:
-        response_2 = requests.get(i)
-        doc_2 = BeautifulSoup(response_2.text, "html.parser")
-        votes = [
-            j.text.replace("\xa0", "")
-            for j in doc_2.find_all("td", class_="cislo", headers="sa6")
-        ]
-        valid_votes.extend(votes)
-    data_collection = [registered_voters, ballot_papers, valid_votes]
-    return data_collection
-
-
-def get_political_parties(city_url: list) -> list[str]:
-    """This function performs following tasks:
-    1) The function extracts data from the first city url in the `city_url` list.
-    2) It finds all the elements with the class "overflow_name" and headers "t1sa1 t1sb2" and "t2sa1 t2sb2".
-    3) Finally, The political party names are stored in a list `political_parties`.
-
-    :return: political_parties (list): a list of political parties.
+#Definuji funkci, která získá data o průběhu voleb v dané obci
+def volebni_data_v_obci(url_obce) -> list:
     """
+    Funkce pomocí knihoven "requests" a "BeautifulSoup" najde z url pro danou obec všechny prvky s třídou "class"
+    a hlavičkami "sa2" -> "Voliči v seznamu", "sa3" -> "Vydané obálky", "sa6" -> "Platné hlasy". Poté z dat pro 
+    jednotlivé obce vytvoří tři seznamy ("volici_v_seznamu", "vydane_obalky", "platne_hlasy") a z nich nakonec 
+    vytvoří jeden kompletní seznam "Data".
+    """
+    #Nuluji seznam voličů
+    volici_v_seznamu = []
+    for i in url_obce:
+        odpoved = requests.get(i).text
+        data = BeautifulSoup(odpoved, "html.parser")
+        #Sbírám očištěná čísla po obcích
+        volici = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "cislo", headers = "sa2")]
+        #Přidávám číslo za obec do seznamu voličů
+        volici_v_seznamu.extend(volici)
+    #Nuluji seznam vydaných obálek
+    vydane_obalky = []
+    for i in url_obce:
+        odpoved = requests.get(i).text
+        data = BeautifulSoup(odpoved, "html.parser")
+        #Sbírám očištěná čísla po obcích
+        obalky = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "cislo", headers = "sa3")]
+        #Přidávám číslo za obec do seznamu
+        vydane_obalky.extend(obalky)
+    #Nuluji seznam platných hlasů
+    platne_hlasy = []
+    for i in url_obce:
+        odpoved = requests.get(i).text
+        data = BeautifulSoup(odpoved, "html.parser")
+        #Sbírám očištěná čísla po obcích
+        hlasy = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="cislo", headers="sa6")]
+        #Přidávám číslo za obec do seznamu
+        platne_hlasy.extend(hlasy)
+    #Vytvářím kompletní seznam
+    Data = [volici_v_seznamu, vydane_obalky, platne_hlasy]
+    #print(Data)
+    return Data
 
-    # get political party names
-    political_parties = []
-    response_2 = requests.get(city_url[0])
-    doc_2 = BeautifulSoup(response_2.text, "html.parser")
-    table1 = [
-        j.text.replace("\xa0", "")
-        for j in doc_2.find_all("td", class_="overflow_name", headers="t1sa1 t1sb2")
-    ]
-    table2 = [
-        j.text.replace("\xa0", "")
-        for j in doc_2.find_all("td", class_="overflow_name", headers="t2sa1 t2sb2")
-    ]
-    political_parties.extend(table1 + table2)
-    return political_parties
+#Definuji funkci, která získá jména politických stran, jejichž kandidáti se účastnili voleb
+def politicke_strany(url_obce: list) -> list[str]:
+    """
+    Funkce pomocí knihoven "requests" a "BeautifulSoup" najde z url pro danou obec všechny prvky s třídou 
+    "overflow_name" a hlavičkami "t1sa1 t1sb2" a "t2sa1 t2sb2" a poté data uloží do seznamu "politicke_strany".
+    """
+    #Vytvářím prázdný seznam
+    politicke_strany = []
+    odpoved = requests.get(url_obce[0]).text
+    data = BeautifulSoup(odpoved, "html.parser")
+    #První tabulka
+    table1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "overflow_name", headers = "t1sa1 t1sb2")]
+    #Druhá tabulka
+    table2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="overflow_name", headers="t2sa1 t2sb2")]
+    #Slučuji tabulky
+    politicke_strany.extend(table1 + table2)
+    #print(politicke_strany)
+    return politicke_strany
 
 
 def get_votes(city_url: list) -> list:
@@ -190,7 +176,6 @@ def get_votes(city_url: list) -> list:
         ]
         total_votes.append(table1 + table2)
     return total_votes
-
 
 def write_csv(
     file_name, city_list, data_collection, political_parties, total_votes
@@ -245,12 +230,12 @@ def main() -> None:
     :raises: ValueError: If there is an error in the process of program."""
 
     try:
-        url, file_name = validate_command_line_arguments()
+        url, file_name = overeni_argumentu()
         print(
             f'Initializing program with url "{url}" and file name "{file_name}"\n'
             f"Extracting data...")
-        city_list = city_names_scraper(url)
-        city_url = get_city_url(url)
+        city_list = scraper_jmena_obci(url)
+        city_url = ziskej_url_obce(url)
         data_collection = voter_turnout_data(city_url)
         political_parties = get_political_parties(city_url)
         total_votes = get_votes(city_url)
