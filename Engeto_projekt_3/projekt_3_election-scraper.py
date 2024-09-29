@@ -6,25 +6,33 @@ email: vit.vogner@gmx.com
 discord: jovial_otter_10639
 """
 
-"#imports"
+#Importuji knihovnu requests pro práci s http odkazy
 import requests
+#Importuji knihovnu BeautifulSoup pro skrapování obsahu webových stránek
 from bs4 import BeautifulSoup
+#Importuji knihovnu argparse pro definování podoby argumentů
 import argparse
+#Importuji knihovnu pro kontrolu textových řetězců vůči RE
 import re
+#Importuji knihovnu csv pro čtení dat z tabulek a zápis do csv
 import csv
+#Importuji knihovnu os pro používání funkcionalit závislých na OS
 import os
 
-"#functions"
+#Uživatelsky definované funkce
 
-
-def validate_url(url: str) -> bool:
-    """This function validates URL using the requests library."""
+#Ověření url odkazu zadaného uživatelem
+def overeni_url(url: str) -> bool:
+    """
+    Funkce kontroluje, že zadané url je funkční pomocí statusového kódu a vrátí True nebo False.
+    """
+    #Statusový kód 200 pro OK odpoveď
     try:
         response = requests.get(url)
         return response.status_code == 200
+    #Pro vyjímky způsobené NOK odpovědí všechny ostatní statusové kódy 
     except requests.exceptions.RequestException:
         return False
-
 
 def validate_command_line_arguments() -> tuple:
     """This function validates the command line arguments and return the URL and file name as a tuple."""
