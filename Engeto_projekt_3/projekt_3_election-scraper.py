@@ -217,34 +217,7 @@ pocet_hlasu = secti_hlasy(url_obce)
 soubor = zapis_csv(nazev_souboru, seznam_obci, Data, politicke_strany, pocet_hlasu)
 
 
-# main function which runs the program
-def main() -> None:
-    """The main function performs following tasks:
-         1) It validates the command line arguments
-         2) scrapes city names
-         3) retrieves city urls
-         4) collects voter turnout data
-         5) retrieves political parties
-         6) retrieves votes from individual cities
-         7) writes the data to a CSV file.
 
-    :raises: ValueError: If there is an error in the process of program."""
-
-    try:
-        url, file_name = overeni_argumentu()
-        print(
-            f'Initializing program with url "{url}" and file name "{file_name}"\n'
-            f"Extracting data...")
-        city_list = scraper_jmena_obci(url)
-        city_url = ziskej_url_obce(url)
-        data_collection = voter_turnout_data(city_url)
-        political_parties = get_political_parties(city_url)
-        total_votes = get_votes(city_url)
-        file = write_csv(
-            file_name, city_list, data_collection, political_parties, total_votes
-        )
-    except ValueError as error:
-        print(f"Error: {error}")
 
 
 if __name__ == "__main__":
