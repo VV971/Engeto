@@ -8,16 +8,16 @@ discord: jovial_otter_10639
 
 #Importuji knihovnu requests pro práci s http odkazy
 import requests
-#Importuji knihovnu BeautifulSoup pro skrapování obsahu webových stránek
-from bs4 import BeautifulSoup
 #Importuji knihovnu argparse pro definování podoby argumentů
 import argparse
 #Importuji knihovnu pro kontrolu textových řetězců vůči RE
 import re
-#Importuji knihovnu csv pro čtení dat z tabulek a zápis do csv
-import csv
 #Importuji knihovnu os pro používání funkcionalit závislých na OS
 import os
+#Importuji knihovnu BeautifulSoup pro skrapování obsahu webových stránek
+from bs4 import BeautifulSoup
+#Importuji knihovnu csv pro čtení dat z tabulek a zápis do csv
+import csv
 
 #Definuji funkci, která ověří url odkaz zadaný uživatelem
 def overeni_url(url: str) -> bool:
@@ -38,38 +38,27 @@ def overeni_argumentu() -> tuple:
     Funkce ověří argumenty zadané pomocí příkazové řádky a vrátí url a jméno souboru jako tuple.
     """
     parser = argparse.ArgumentParser(description = "Ověření argumentů z příkazové řádky.")
+    #Načítam argumenty do parseru
     parser.add_argument("url", type = str, help = "url k ověření.")
-    parser.add_argument("file_name", type = str, help = "Jméno souboru k ověření.")
+    parser.add_argument("nazev_souboru", type = str, help = "Jméno souboru k ověření.")
     args = parser.parse_args()
-    url, file_name = args.url, args.file_name
-
+    url, nazev_souboru = args.url, args.nazev_souboru
+    #Definuji očekávanné jádro url
     expected_core_url = "https://www.volby.cz/pls/ps2017nss/"
+    #Porovnávám zadané url s očekávaným
     match = re.match(expected_core_url, url)
+    #Pokud se neshoduje, tak oznamuji chybu
     if not match:
         raise ValueError(f'Nesprávné url. Je očekáván odkaz začínající "{expected_core_url}", ale bylo zadáno "{url}"')
-    if not file_name.endswith(".csv"):
-        raise ValueError(f"Nesprávný typ souboru. Je očekáváno .csv, ale bylo zadáno {os.path.splitext(file_name)[1]}")
+    #Pokud se liší typ zadaného výstupního souboru, tak oznamuji chybu
+    if not nazev_souboru.endswith(".csv"):
+        raise ValueError(f'Nesprávný typ souboru. Je očekáváno .csv, ale bylo zadáno "{os.path.splitext(nazev_souboru)[1]}"')
+    #Pokud zadaná url neprošla ověřením, tak oznamuji chybu
     if not overeni_url(url):
-        raise ValueError(f"Nesprávné url: {url}")
-    return url, file_name
+        raise ValueError(f'Nesprávné url: "{url}"')
+    return url, nazev_souboru
 
-#Definuji funkci, která ze zadaného url získá kód a jméno města
-def scraper_jmena_obci(url) -> list:
-    """
-    Funkce získá ze zadaného url kód (všechny prvky s třídou "cislo") a jméno města (všechny prvky s třídou "overflow_name").
-    """
-    odpoved = requests.get(url).text
-    data = BeautifulSoup(odpoved, "html.parser")
-    #Získávám kódy obcí
-    kody_obci = [mesto.text for mesto in data.find_all("td", class_ = "cislo")]
-    #Získávám názvy obcí
-    jmena_obci = [mesto.text for mesto in data.find_all("td", class_ = "overflow_name")]
-    #Vytvářím seznam s kódy a názvy obcí
-    seznam_obci = [kody_obci, jmena_obci]
-    #print(seznam_obci)
-    return seznam_obci
-
-#Definuji funkci, která ze zadaného url získá kód a jméno města
+#Definuji funkci, která ze zadaného url získá kódy a jména všech obcí
 def scraper_jmena_obci(url) -> list:
     """
     Funkce získá ze zadaného url získá kód (všechny prvky s třídou "cislo") a jméno města (všechny prvky s třídou "overflow_name").
@@ -101,7 +90,7 @@ def ziskej_url_obce(url: str) -> list[str]:
     url_obce = []
     for table in tables:
         #Hledám každou hodnotu td třídy "cislo" a hlavičku specifikovanou v seznamu tabulek
-        for td in data.find_all("td", class_="cislo", headers = table):
+        for td in data.find_all("td", class_ = "cislo", headers = table):
             #Pro každý odpovídající prvek "td" hledám tag "a"
             a = td.find("a")
             if a:
@@ -141,15 +130,15 @@ def volby_v_obci_prehled(url_obce) -> list:
     platne_hlasy = []
     for i in url_obce:
         odpoved = requests.get(i).text
-        data = BeautifulSoup(odpoved, "html.parser")
+        data_bs = BeautifulSoup(odpoved, "html.parser")
         #Sbírám očištěná čísla po obcích
-        hlasy = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="cislo", headers="sa6")]
+        hlasy = [j.text.replace("\xa0", "") for j in data_bs.find_all("td", class_="cislo", headers="sa6")]
         #Přidávám číslo za obec do seznamu
         platne_hlasy.extend(hlasy)
     #Vytvářím kompletní seznam
-    Data = [volici_v_seznamu, vydane_obalky, platne_hlasy]
-    #print(Data)
-    return Data
+    data = [volici_v_seznamu, vydane_obalky, platne_hlasy]
+    #print(data)
+    return data
 
 #Definuji funkci, která získá jména politických stran, jejichž kandidáti se účastnili voleb
 def seznam_politickych_stran(url_obce: list) -> list[str]:
@@ -164,7 +153,7 @@ def seznam_politickych_stran(url_obce: list) -> list[str]:
     #První tabulka
     table_1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "overflow_name", headers = "t1sa1 t1sb2")]
     #Druhá tabulka
-    table_2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="overflow_name", headers="t2sa1 t2sb2")]
+    table_2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "overflow_name", headers = "t2sa1 t2sb2")]
     #Slučuji tabulky
     politicke_strany.extend(table_1 + table_2)
     #print(politicke_strany)
@@ -180,14 +169,14 @@ def secti_hlasy(url_obce: list) -> list:
     for i in url_obce:
         odpoved = requests.get(i).text
         data = BeautifulSoup(odpoved, "html.parser")
-        table_1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="cislo", headers="t1sa2 t1sb3")]
-        table_2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_="cislo", headers="t2sa2 t2sb3")]
+        table_1 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "cislo", headers = "t1sa2 t1sb3")]
+        table_2 = [j.text.replace("\xa0", "") for j in data.find_all("td", class_ = "cislo", headers = "t2sa2 t2sb3")]
         pocet_hlasu.append(table_1 + table_2)
     #print(pocet_hlasu)
     return pocet_hlasu
 
 #Definuji funkci, která zapíše sesbíraná data do csv souboru
-def zapis_csv(nazev_souboru, seznam_obci, Data, politicke_strany, pocet_hlasu) -> None:
+def zapis_csv(nazev_souboru, seznam_obci, data, politicke_strany, pocet_hlasu) -> None:
     """
     Funkce zapíše sesbíraná data do csv souboru dle vstupnách parametrů.
     """
@@ -200,25 +189,38 @@ def zapis_csv(nazev_souboru, seznam_obci, Data, politicke_strany, pocet_hlasu) -
         for i in range(len(seznam_obci[0])):
             writer.writerow(
                 [seznam_obci[0][i], seznam_obci[1][i]]
-                + [Data[0][i]]
-                + [Data[1][i]]
-                + [Data[2][i]]
+                + [data[0][i]]
+                + [data[1][i]]
+                + [data[2][i]]
                 + pocet_hlasu[i]
             )
     print(f"Soubor {nazev_souboru} byl úspěšně vytvořen a uložen v:{file_path}")
 
-url = 'https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=6&xnumnuts=4204'
+#Definuji funkci, která zavolá všechny vnořené funkce v pořadí potřebném pro správné vykonání programu
+def main() -> None:
+    """
+    Funkce vykoná tyto operace:
+        1. ověří argumnety zadané z příkazového řádku
+        2. ze zadaného url získá kódy a jména všech obcí
+        3. vytvoří url pro všechny obce nalezené v kroku 2
+        4. získá data o průběhu voleb v každé obci
+        5. získá jména politických stran, jejichž kandidáti se účastnili voleb
+        6. získá počty hlasů pro každou politickou stranu v dané obci
+        7. zapíše sesbíraná data do výsledného csv souboru
+    """
+    try:
+        url, nazev_souboru = overeni_argumentu()
+        print(f'Inicializuji program s URL "{url}" a názvem souboru "{nazev_souboru}"\n'
+              f'Extrahuji data...')
+        seznam_obci = scraper_jmena_obci(url)
+        url_obce = ziskej_url_obce(url)
+        data = volby_v_obci_prehled(url_obce)
+        politicke_strany = seznam_politickych_stran(url_obce)
+        pocet_hlasu = secti_hlasy(url_obce)
+        soubor = zapis_csv(nazev_souboru, seznam_obci, data, politicke_strany, pocet_hlasu)
+    except ValueError as error:
+        print(f'Chyba: "{error}"')
 
-url_obce = ziskej_url_obce(url)
-seznam_obci = scraper_jmena_obci(url)
-Data = volby_v_obci_prehled(url_obce)
-politicke_strany = seznam_politickych_stran(url_obce)
-pocet_hlasu = secti_hlasy(url_obce)
-soubor = zapis_csv(nazev_souboru, seznam_obci, Data, politicke_strany, pocet_hlasu)
-
-
-
-
-
+#Podmínka pro spuštění, pokud je soubor spouštěn jako skript
 if __name__ == "__main__":
     main()
