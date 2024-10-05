@@ -1,7 +1,7 @@
 # **Program na sbírání výsledků voleb**
 Program je napsaný v programovacím jazyce Python a je určen k automatizovanému sběru dat o výsledku voleb do Poslanecké sněmovny ČR v roce 2017 z oficiálních webových stránek Českého statistického úřadu (viz. odkaz https://volby.cz/pls/ps2017nss/ps3?xjazyk=CZ) ve zvoleném okrese a k jejich uložení do csv souboru.
  
-Program potřebuje ke svému běhu dva argumenty zadané z příkazové řádky. Prvním je odkaz na volební okres, ze kterého chcete posbírat data, zadaný jako URL, např.: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=9&xnumnuts=5302). Druhým je jméno výstupního csv souboru.
+Program potřebuje ke svému běhu dva argumenty zadané z příkazové řádky. Prvním je odkaz na volební okres, ze kterého chcete posbírat data, zadaný jako URL, např.: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=9&xnumnuts=5302. Druhým je jméno výstupního csv souboru.
 
 # **Použité knihovny**
 Program používá knihovny "requests", "argparse", "re", "os", "BeautifulSoup", "csv".
@@ -16,7 +16,7 @@ Funkce “sber_jmen_obci” ze zadaného URL získá kódy a jména všech obcí
 4. Vytvoření sběrného URL pro všechny obce
 Funkce “ziskej_url_obce” přijímá jako argument URL pro zvolený okres a vytvoří seznam s URL pro všechny obce nalezené v tomto okrese.
 5. Získání dat o průběhu voleb v dané obci
-Funkce “volby_v_obci_prehled“ vytvoří seznam s základními daty o průběhu voleb v dané obci (počet registrovaných voličů, počet vydaných obálek s volebními lístky, počet odevzdaných platných hlasů a to za pomoci knihoven “requests” (získání HTML obsahu) a “BeautifulSoup” (parsování HTML obsahu.
+Funkce “volby_v_obci_prehled“ vytvoří seznam s základními daty o průběhu voleb v dané obci (počet registrovaných voličů, počet vydaných obálek s volebními lístky, počet odevzdaných platných hlasů) a to za pomoci knihoven “requests” (získání HTML obsahu) a “BeautifulSoup” (parsování HTML obsahu).
 6. Získání jmen politických stran
 Funkce “seznam_politickych_stran” získá jména politických stran, jejichž kandidáti se účastnili voleb v dané obci a to za pomoci knihoven “requests” (získání HTML obsahu) a “BeautifulSoup” (parsování HTML obsahu).
 7. Získání počtu hlasů pro každou politickou stranu v dané obci
