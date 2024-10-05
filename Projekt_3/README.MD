@@ -4,13 +4,7 @@ Program je napsaný v programovacím jazyce Python a je určen k automatizované
 Program potřebuje ke svému běhu dva argumenty zadané z příkazové řádky. Prvním je odkaz na volební okres, ze kterého chcete posbírat data, zadaný jako URL, např.: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=9&xnumnuts=5302). Druhým je jméno výstupního csv souboru.
 
 # **Použité knihovny**
-Program používá tyto knihovny:
-• requests
-• argparse
-• re
-• os
-• BeautifulSoup
-• csv
+Program používá knihovny "requests", "argparse", "re", "os", "BeautifulSoup", "csv".
 
 # **Popis funkce**
 1. Validace URL
@@ -32,13 +26,15 @@ Funkce “zapis_csv” zapíše sesbíraná data do jednoho csv souboru a ten ul
 
 # **Spuštění**
 Program lze spustit v jakémkoliv Python integrovaném vývojovém prostředí např. v MS Visual Studio Code po zadání příkazu se dvěma povinnými argumenty (URL, název souboru) z příkazové řádky.
+
 Vzorový příkaz vypadá takto:
--------------------------------------------------------
+
 python projekt_3.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=12&xnumnuts=7103" "Prostejov.csv"
--------------------------------------------------------
+
 
 # **Autor**
 Vít Vogner
-Email: vit.vogner@gmx.com
-Discord: jovial_otter_10639
 
+Email: vit.vogner@gmx.com
+
+Discord: jovial_otter_10639
