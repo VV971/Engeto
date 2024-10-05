@@ -29,7 +29,7 @@ Program lze spustit v jakémkoliv Python integrovaném vývojovém prostředí n
 
 Vzorový příkaz vypadá takto:
 
-python projekt_3.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=12&xnumnuts=7103" "Prostejov.csv"
+python projekt_3.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=3&xnumnuts=3103" "Jindrichuv Hradec.csv"
 
 
 # **Autor**
