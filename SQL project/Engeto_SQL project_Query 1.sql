@@ -33,7 +33,7 @@ FROM engeto_09_2024.czechia_payroll_unit
 SELECT  *
 FROM engeto_09_2024.czechia_payroll_value_type
 
-SELECT  cp.id, cp.value, cp.value_type_code, cpvt.name, cp. unit_code, cpu.name, cp.calculation_code, cpc.name, cp.industry_branch_code, cp.payroll_year, cp.payroll_quarter
+SELECT  cp.id, cp.value, cp.value_type_code, cpvt.name, cp. unit_code, cpu.name, cp.calculation_code, cpc.name, cp.industry_branch_code, cpib.name, cp.payroll_year, cp.payroll_quarter
 FROM engeto_09_2024.czechia_payroll AS cp
 LEFT JOIN engeto_09_2024.czechia_payroll_value_type AS cpvt
 ON cp.value_type_code = cpvt.code
@@ -41,3 +41,31 @@ LEFT JOIN engeto_09_2024.czechia_payroll_unit AS cpu
 ON cp.unit_code = cpu.code
 LEFT JOIN engeto_09_2024.czechia_payroll_calculation AS cpc
 ON cp.calculation_code = cpc.code
+LEFT JOIN engeto_09_2024.czechia_payroll_industry_branch AS cpib
+ON cp.industry_branch_code = cpib.code;
+
+  
+SELECT 	cp.payroll_year,
+		cpib.name,
+		AVG(cp.value) AS pay,
+		-- cp.id,
+		-- cp.value_type_code,
+		-- cpvt.name AS payroll_value_type,
+		-- cp. unit_code,
+		cpu.name AS currency
+		-- cp.calculation_code,
+		-- cpc.name,
+		-- cp.industry_branch_code,
+		-- cp.payroll_quarter
+FROM engeto_09_2024.czechia_payroll AS cp
+LEFT JOIN engeto_09_2024.czechia_payroll_value_type AS cpvt
+ON cp.value_type_code = cpvt.code
+LEFT JOIN engeto_09_2024.czechia_payroll_unit AS cpu
+ON cp.unit_code = cpu.code
+LEFT JOIN engeto_09_2024.czechia_payroll_calculation AS cpc
+ON cp.calculation_code = cpc.code
+LEFT JOIN engeto_09_2024.czechia_payroll_industry_branch AS cpib
+ON cp.industry_branch_code = cpib.code
+WHERE cpvt.code = 5958 AND cpib.code IS NOT NULL 
+GROUP BY cp.payroll_year, cpib.name
+ORDER BY cp.payroll_year, cpib.name;
