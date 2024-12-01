@@ -16,10 +16,10 @@ WITH cte_pay_change AS (
 				GROUP BY tvv2.industry_branch
 				) THEN 'Rising'
 			ELSE 'Decreasing'
-		END AS YtY_pay_trend,
+		END AS yty_pay_trend,
 		LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_pay_previous_year,
-		tvv.average_pay - LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_YtY_pay_change_Abs,
-		tvv.average_pay / LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_YtY_pay_change_Percentage
+		tvv.average_pay - LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_yty_pay_change_abs,
+		tvv.average_pay / LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_yty_pay_change_percentage
 	FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvv
 	GROUP BY tvv.payroll_year, tvv.industry_branch
 )
@@ -28,9 +28,9 @@ SELECT
 	cte_pc.industry_branch,
 	cte_pc.pay_name,
 	ROUND(cte_pc.average_pay, 2) AS average_pay,
-	cte_pc.YtY_pay_trend,
+	cte_pc.yty_pay_trend,
 	ROUND(cte_pc.average_pay_previous_year, 2) AS average_pay_previous_year,
-	ROUND(cte_pc.average_YtY_pay_change_Abs, 2) AS average_YtY_pay_change_Abs,
-	ROUND((cte_pc.average_YtY_pay_change_Percentage * 100) - 100, 3) AS average_YtY_pay_change_Percentage
+	ROUND(cte_pc.average_yty_pay_change_abs, 2) AS average_yty_pay_change_abs,
+	ROUND((cte_pc.average_yty_pay_change_percentage * 100) - 100, 3) AS average_yty_pay_change_percentage
 FROM cte_pay_change AS cte_pc
 GROUP BY cte_pc.payroll_year, cte_pc.industry_branch;

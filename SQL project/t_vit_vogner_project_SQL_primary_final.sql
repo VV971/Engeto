@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS t_vit_vogner_project_SQL_primary_final AS (
 WITH cte_payroll AS (
     SELECT  
         cp.payroll_year AS `year`,
+        NULL AS code,
         cpib.name AS data_name,
         cpvt.name AS data_type,
         AVG(cp.value) AS average_value,
@@ -20,10 +21,11 @@ WITH cte_payroll AS (
      cte_prices AS (
     SELECT 
         YEAR(cp.date_from) AS `year`,
+        cp.category_code AS code,
         cpc.name AS data_name,
         'Průměrná cena za jednotku' AS data_type,
         ROUND(AVG(cp.value), 2) AS average_value,
-        'Kč' AS unit
+        cpc.price_unit AS unit
     FROM engeto_26_09_2024.czechia_price AS cp
     LEFT JOIN engeto_26_09_2024.czechia_price_category AS cpc 
     ON cp.category_code = cpc.code

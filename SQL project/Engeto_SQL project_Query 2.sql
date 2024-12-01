@@ -74,9 +74,66 @@ Max_Date = 2018-12-10 00:00:00.000
 SELECT MAX(cp.date_from)
 FROM engeto_26_09_2024.czechia_price AS cp;
 
-SELECT cp.*
+SELECT cp.id, cp.category_code, cpc.name, cp.value, 'Kč' AS currency, cpc.price_value, cpc.price_unit, cp.date_from, cp.region_code 
 FROM engeto_26_09_2024.czechia_price AS cp
+LEFT JOIN engeto_26_09_2024.czechia_price_category AS cpc 
+ON cp.category_code = cpc.code 
 WHERE cp.category_code IN (111301, 114201)
 AND YEAR(cp.date_from) BETWEEN '2006' AND '2018'
 ORDER BY cp.date_from DESC;
+-- WHERE cp.category_code IN (111301, 114201) -- 111301 - Chléb konzumní kmínový  1.0 kg, 114201 - Mléko polotučné pasterované 1.0 l
+-- AND YEAR(cp.date_from) BETWEEN '2006' AND '2018'
 -- LIMIT 500;
+
+SELECT MIN(cp.payroll_year) FROM engeto_26_09_2024.czechia_payroll AS cp
+
+SELECT cp.id, cp.category_code, cpc.name, cp.value, 'Kč' AS currency, cpc.price_value, cpc.price_unit, cp.date_from, cp.region_code 
+FROM engeto_26_09_2024.czechia_price AS cp
+LEFT JOIN engeto_26_09_2024.czechia_price_category AS cpc 
+ON cp.category_code = cpc.code 
+WHERE cp.category_code IN (111301, 114201)
+AND YEAR(cp.date_from) BETWEEN (SELECT MIN(cp.payroll_year) FROM engeto_26_09_2024.czechia_payroll AS cp) 
+AND (SELECT MAX(cp.payroll_year) FROM engeto_26_09_2024.czechia_payroll AS cp)
+ORDER BY cp.date_from DESC;
+
+WITH cte_payroll AS (
+    SELECT
+        `year`,
+        -- code,
+        -- data_name,
+        data_type,
+        ROUND(AVG(average_value), 2) AS average_value,
+        unit
+    FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf
+    WHERE data_type  = 'Průměrná hrubá mzda na zaměstnance'
+    AND `year` IN (
+    (SELECT MIN(tvvpspf.`year`) FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf WHERE tvvpspf.data_type = 'Průměrná cena za jednotku'),
+    (SELECT MAX(tvvpspf.`year`) FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf WHERE tvvpspf.data_type = 'Průměrná cena za jednotku')
+    )
+    GROUP BY `year`, data_type
+    ), 
+cte_prices AS (
+    SELECT
+        `year`,
+        -- code,
+        data_name,
+        data_type,
+        average_value,
+        unit
+    FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf
+    WHERE code IN (111301, 114201)
+    AND `year` IN (
+    (SELECT MIN(tvvpspf.`year`) FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf WHERE tvvpspf.data_type = 'Průměrná cena za jednotku'),
+    (SELECT MAX(tvvpspf.`year`) FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf WHERE tvvpspf.data_type = 'Průměrná cena za jednotku')
+    )
+    )
+SELECT
+    pr.`year`,
+    pr.data_name AS food_name,
+    CONCAT(FORMAT(pr.average_value, 2), ' Kč/', pr.unit) AS average_food_price,
+    CONCAT(FORMAT(pa.average_value, 2), ' ', pa.unit, '/měsíc') AS average_salary,
+    CONCAT(FORMAT(pa.average_value / pr.average_value, 2), ' ', pr.unit) AS average_food_amount_per_salary
+FROM cte_payroll AS pa
+JOIN cte_prices AS pr
+ON pa.`year` = pr.`year`;
+    
