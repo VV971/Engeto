@@ -10,7 +10,7 @@ WITH cte_pay_change AS (
 			WHEN LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) IS NULL THEN 'Missing Data'
 			WHEN tvv.average_pay > (
 				SELECT tvv2.average_pay
-				FROM engeto_09_2024.t_vit_vogner_project_sql_primary_final AS tvv2
+				FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvv2
 				WHERE tvv2.payroll_year = tvv.payroll_year - 1
 				AND tvv2.industry_branch = tvv.industry_branch
 				GROUP BY tvv2.industry_branch
@@ -20,7 +20,7 @@ WITH cte_pay_change AS (
 		LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_pay_previous_year,
 		tvv.average_pay - LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_YtY_pay_change_Abs,
 		tvv.average_pay / LAG(tvv.average_pay) OVER (PARTITION BY tvv.industry_branch ORDER BY tvv.payroll_year) AS average_YtY_pay_change_Percentage
-	FROM engeto_09_2024.t_vit_vogner_project_sql_primary_final AS tvv
+	FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvv
 	GROUP BY tvv.payroll_year, tvv.industry_branch
 )
 SELECT 
