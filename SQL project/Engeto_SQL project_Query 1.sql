@@ -1,36 +1,37 @@
 -- 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
-WITH cte_pay_change AS (
+WITH cte_platy_zmeny AS (
 	SELECT 
-		tvvpspf.`year`,
-		tvvpspf.data_name AS industry_branch,
-		tvvpspf.data_type AS pay_name,
-		tvvpspf.average_value AS average_pay,
+		zdroj.rok,
+		zdroj.nazev AS odvetvi,
+		zdroj.datovy_typ AS typ_platu,
+		zdroj.prumerna_hodnota AS prumerny_plat,
 		CASE
-			WHEN LAG(tvvpspf.average_value) OVER (PARTITION BY tvvpspf.data_name ORDER BY tvvpspf.`year`) IS NULL THEN 'Missing Data'
-			WHEN tvvpspf.average_value > (
-				SELECT tvvpspf2.average_value
-				FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf2
-				WHERE tvvpspf2.`year` = tvvpspf.`year` - 1
-				AND tvvpspf2.data_name = tvvpspf.data_name
-				GROUP BY tvvpspf2.data_name
-				) THEN 'Rising'
-			ELSE 'Decreasing'
-		END AS yty_pay_trend,
-		LAG(tvvpspf.average_value) OVER (PARTITION BY tvvpspf.data_name ORDER BY tvvpspf.`year`) AS average_pay_previous_year,
-		tvvpspf.average_value - LAG(tvvpspf.average_value) OVER (PARTITION BY tvvpspf.data_name ORDER BY tvvpspf.`year`) AS average_yty_pay_change_abs,
-		tvvpspf.average_value / LAG(tvvpspf.average_value) OVER (PARTITION BY tvvpspf.data_name ORDER BY tvvpspf.`year`) AS average_yty_pay_change_percentage
-	FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf
-	GROUP BY tvvpspf.`year`, tvvpspf.data_name
+			WHEN LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) IS NULL THEN 'Chybí data'
+			WHEN zdroj.prumerna_hodnota > (
+				SELECT zdroj2.prumerna_hodnota
+				FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj2
+				WHERE zdroj2.rok = zdroj.rok - 1
+				AND zdroj2.nazev = zdroj.nazev
+				GROUP BY zdroj2.nazev
+				) THEN 'Rostoucí'
+			ELSE 'Klesající'
+		END AS mezirocni_trend,
+		LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerny_plat_predchozi_rok,
+		zdroj.prumerna_hodnota - LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerna_mezirocni_zmena_platu_abs,
+		zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerna_mezirocni_zmena_platu_procentne
+	FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj
+	WHERE zdroj.datovy_typ = 'Průměrná hrubá mzda na zaměstnance'
+	GROUP BY zdroj.rok, zdroj.nazev
 )
 SELECT 
-	cte_pc.`year` AS payroll_year,
-	cte_pc.industry_branch,
-	cte_pc.pay_name,
-	ROUND(cte_pc.average_pay, 2) AS average_pay,
-	cte_pc.yty_pay_trend,
-	ROUND(cte_pc.average_pay_previous_year, 2) AS average_pay_previous_year,
-	ROUND(cte_pc.average_yty_pay_change_abs, 2) AS average_yty_pay_change_abs,
-	ROUND((cte_pc.average_yty_pay_change_percentage * 100) - 100, 3) AS average_yty_pay_change_percentage
-FROM cte_pay_change AS cte_pc
-GROUP BY cte_pc.`year`, cte_pc.industry_branch;
+	cte_pz.rok,
+	cte_pz.odvetvi,
+	cte_pz.typ_platu,
+	CONCAT(FORMAT(cte_pz.prumerny_plat, 2), ',- Kč') AS average_pay,
+	cte_pz.mezirocni_trend,
+	CONCAT(FORMAT(cte_pz.prumerny_plat_predchozi_rok, 2), ',- Kč') AS prumerny_plat_predchozi_rok,
+	CONCAT(FORMAT(cte_pz.prumerna_mezirocni_zmena_platu_abs, 2), ',- Kč') AS prumerna_mezirocni_zmena_platu_abs,
+	CONCAT(FORMAT((cte_pz.prumerna_mezirocni_zmena_platu_procentne * 100) - 100, 3), ' %') AS prumerna_mezirocni_zmena_platu_procentne
+FROM cte_platy_zmeny AS cte_pz
+GROUP BY cte_pz.rok, cte_pz.odvetvi;

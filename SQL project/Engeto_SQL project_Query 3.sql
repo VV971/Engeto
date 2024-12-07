@@ -1,23 +1,21 @@
 -- 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
-WITH cte_food_prices AS (
+WITH cte_ceny_potravin AS (
     SELECT
-        tvvpspf.`year`,
-        tvvpspf.code AS food_code,
-        tvvpspf.data_name AS food_name,
-        tvvpspf.average_value AS average_food_price,
-        tvvpspf.average_value / LAG(tvvpspf.average_value) OVER (PARTITION BY tvvpspf.data_name ORDER BY tvvpspf.`year`) AS average_yty_food_price_change_percentage
-    FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS tvvpspf
-    WHERE data_type = 'Průměrná cena za jednotku'
-)
-SELECT DISTINCT
-    cte_fp.food_code,
-    cte_fp.food_name,
-    ROUND(SUM(cte_fp.average_yty_food_price_change_percentage), 4) AS average_food_price_increase_percentage
-FROM cte_food_prices AS cte_fp
-GROUP BY 
-    cte_fp.food_code,
-    cte_fp.food_name
+        zdroj.rok,
+        zdroj.kod AS kod_potraviny,
+        zdroj.nazev AS nazev_potraviny,
+        zdroj.prumerna_hodnota AS prumerna_cena_potraviny,
+        zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerna_mezirocni_zmena_ceny_potraviny_procentne
+    FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj
+    WHERE zdroj.datovy_typ = 'Průměrná cena za jednotku'
+) 
+SELECT  
+    cte_cp.nazev_potraviny,
+    CONCAT(FORMAT(SUM(cte_cp.prumerna_mezirocni_zmena_ceny_potraviny_procentne), 4), ' %') AS prumerna_mezirocni_zmena_ceny_potraviny_procentne
+FROM cte_ceny_potravin AS cte_cp
+GROUP BY
+    cte_cp.nazev_potraviny
 ORDER BY 
-    average_food_price_increase_percentage ASC
+    prumerna_mezirocni_zmena_ceny_potraviny_procentne ASC
 LIMIT 2;

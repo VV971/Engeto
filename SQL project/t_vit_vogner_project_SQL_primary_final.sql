@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS t_vit_vogner_project_SQL_primary_final AS (
-WITH cte_payroll AS (
+WITH cte_platy AS (
     SELECT  
-        cp.payroll_year AS `year`,
-        NULL AS code,
-        cpib.name AS data_name,
-        cpvt.name AS data_type,
-        AVG(cp.value) AS average_value,
-        cpu.name AS unit
+        cp.payroll_year AS rok,
+        NULL AS kod,
+        cpib.name AS nazev,
+        cpvt.name AS datovy_typ,
+        AVG(cp.value) AS prumerna_hodnota,
+        cpu.name AS jednotka
     FROM engeto_26_09_2024.czechia_payroll AS cp
     LEFT JOIN engeto_26_09_2024.czechia_payroll_value_type AS cpvt
     ON cp.value_type_code = cpvt.code
@@ -18,24 +18,24 @@ WITH cte_payroll AS (
     GROUP BY cp.payroll_year, cpib.name
     ORDER BY cp.payroll_year, cpib.name
     ),
-     cte_prices AS (
+     cte_ceny AS (
     SELECT 
-        YEAR(cp.date_from) AS `year`,
-        cp.category_code AS code,
-        cpc.name AS data_name,
-        'Průměrná cena za jednotku' AS data_type,
-        ROUND(AVG(cp.value), 2) AS average_value,
-        cpc.price_unit AS unit
+        YEAR(cp.date_from) AS rok,
+        cp.category_code AS kod,
+        cpc.name AS nazev,
+        'Průměrná cena za jednotku' AS datovy_typ,
+        ROUND(AVG(cp.value), 2) AS prumerna_hodnota,
+        cpc.price_unit AS jednotka
     FROM engeto_26_09_2024.czechia_price AS cp
     LEFT JOIN engeto_26_09_2024.czechia_price_category AS cpc 
     ON cp.category_code = cpc.code
-    GROUP BY `year`, data_name, data_type
+    GROUP BY rok, nazev, datovy_typ
     ORDER BY cp.date_from DESC
     )
-SELECT cte_pa.*
-FROM cte_payroll AS cte_pa
-GROUP BY cte_pa.`year`, cte_pa.data_name
+SELECT cte_pl.*
+FROM cte_platy AS cte_pl
+GROUP BY cte_pl.rok, cte_pl.nazev
 UNION ALL
-SELECT cte_pr.*
-FROM cte_prices AS cte_pr
-GROUP BY cte_pr.`year`, cte_pr.data_name);
+SELECT cte_ce.*
+FROM cte_ceny AS cte_ce
+GROUP BY cte_ce.rok, cte_ce.nazev);
