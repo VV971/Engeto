@@ -50,15 +50,12 @@ WITH cte_vyvoj_cen_potravin AS (
         GROUP BY zdroj.rok
     )
 SELECT
-    cte_vcp.*,
-    cte_vp.*
-    /*
     cte_vcp.rok,
     CONCAT(FORMAT(cte_vcp.prumerna_cena, 2), ",- Kč") AS prumerna_cena,
     CONCAT(FORMAT(cte_vcp.prumerna_cena_predchozi_rok, 2), ",- Kč") AS prumerna_cena_predchozi_rok,
-    CONCAT(FORMAT(cte_vcp.rozdil_prumernych_cen, 2), ",- Kč") AS rozdil_prumernych_cen,
+    CONCAT(FORMAT(cte_vcp.rozdil_prumernych_cen_abs, 2), ",- Kč") AS rozdil_prumernych_cen_abs,
+    CONCAT(FORMAT(cte_vcp.rozdil_prumernych_cen_procentne, 3), " %") AS rozdil_prumernych_cen_procentne,
     cte_vcp.trend_cen
-    */
 FROM cte_vyvoj_cen_potravin AS cte_vcp
 JOIN cte_vyvoj_platu AS cte_vp 
 ON cte_vcp.rok = cte_vp.rok;
