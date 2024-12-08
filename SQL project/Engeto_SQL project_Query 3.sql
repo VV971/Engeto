@@ -18,4 +18,4 @@ GROUP BY
     cte_cp.nazev_potraviny
 ORDER BY 
     prumerna_mezirocni_zmena_ceny_potraviny_procentne ASC
-LIMIT 2;
+LIMIT 1;
