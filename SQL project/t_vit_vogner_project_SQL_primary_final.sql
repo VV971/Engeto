@@ -12,9 +12,14 @@ WITH cte_platy AS (
     ON cp.value_type_code = cpvt.code
     LEFT JOIN engeto_26_09_2024.czechia_payroll_unit AS cpu
     ON cp.unit_code = cpu.code
+    LEFT JOIN engeto_26_09_2024.czechia_payroll_calculation AS cpc
+    ON cp.calculation_code = cpc.code
     LEFT JOIN engeto_26_09_2024.czechia_payroll_industry_branch AS cpib
     ON cp.industry_branch_code = cpib.code
-    WHERE cpvt.code = 5958 AND cpib.code IS NOT NULL -- 5958 - Průměrná hrubá mzda na zaměstnance
+    WHERE cpvt.code = 5958  -- 5958 = Průměrná hrubá mzda na zaměstnance
+    AND cpu.code = 200      -- 200 = Kč
+    AND cpc.code = 100      -- 100 = Fyzické osoby (200 = Přepočtené počty, ale neznám počet zaměstnanců, proto je z dotazu vyřazuji)
+    AND cpib.code IS NOT NULL 
     GROUP BY cp.payroll_year, cpib.name
     ORDER BY cp.payroll_year, cpib.name
     ),
