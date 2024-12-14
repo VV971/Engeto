@@ -25,7 +25,7 @@ AND e.`year` BETWEEN (SELECT
                           CASE 
                               WHEN MIN(cpa.payroll_year) > MIN(YEAR(cpi.date_from)) THEN MIN(cpa.payroll_year)
                               WHEN MIN(YEAR(cpi.date_from)) > MIN(cpa.payroll_year) THEN MIN(YEAR(cpi.date_from))
-                          END AS min_rok  -- vybírám větší z minimálních roků, abych data sjednotil na totožné období 
+                          END AS min_year  -- vybírám větší z minimálních roků, abych data sjednotil na totožné období 
                       FROM engeto_26_09_2024.czechia_payroll AS cpa
                       LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
                       ON cpa.payroll_year = YEAR(cpi.date_from))
@@ -33,7 +33,7 @@ AND (SELECT
         CASE 
             WHEN MAX(cpa.payroll_year) > MAX(YEAR(cpi.date_from)) THEN MAX(YEAR(cpi.date_from))
             WHEN MAX(YEAR(cpi.date_from)) > MAX(cpa.payroll_year) THEN MAX(cpa.payroll_year)
-        END AS max_rok  -- vybírám menší z maximálních roků, abych data sjednotil na totožné období
+        END AS max_year  -- vybírám menší z maximálních roků, abych data sjednotil na totožné období
     FROM engeto_26_09_2024.czechia_payroll AS cpa
     LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
     ON cpa.payroll_year = YEAR(cpi.date_from))
