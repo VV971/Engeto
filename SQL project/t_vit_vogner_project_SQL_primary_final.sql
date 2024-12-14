@@ -19,9 +19,27 @@ WITH cte_platy AS (
     WHERE cpvt.code = 5958  -- 5958 = Průměrná hrubá mzda na zaměstnance
     AND cpu.code = 200      -- 200 = Kč
     AND cpc.code = 100      -- 100 = Fyzické osoby (200 = Přepočtené počty, ale neznám počet zaměstnanců, proto je z dotazu vyřazuji)
-    AND cpib.code IS NOT NULL 
+    AND cpib.code IS NOT NULL
+    AND cp.payroll_year >= (
+                            SELECT
+                                CASE 
+                                    WHEN MIN(cpa.payroll_year) > MIN(YEAR(cpi.date_from)) THEN MIN(cpa.payroll_year)
+                                    WHEN MIN(YEAR(cpi.date_from)) > MIN(cpa.payroll_year) THEN MIN(YEAR(cpi.date_from))
+                                END AS min_rok  -- vybírám větší z minimálních roků, abych data sjednotil na totožné období 
+                            FROM engeto_26_09_2024.czechia_payroll AS cpa
+                            LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
+                            ON cpa.payroll_year = YEAR(cpi.date_from))
+    AND cp.payroll_year <= (
+                            SELECT
+                                CASE 
+                                    WHEN MAX(cpa.payroll_year) > MAX(YEAR(cpi.date_from)) THEN MAX(YEAR(cpi.date_from))
+                                    WHEN MAX(YEAR(cpi.date_from)) > MAX(cpa.payroll_year) THEN MAX(cpa.payroll_year)
+                            END AS max_rok  -- vybírám menší z maximálních roků, abych data sjednotil na totožné období
+                            FROM engeto_26_09_2024.czechia_payroll AS cpa
+                            LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
+                            ON cpa.payroll_year = YEAR(cpi.date_from))
     GROUP BY cp.payroll_year, cpib.name
-    ORDER BY cp.payroll_year, cpib.name
+    ORDER BY cp.payroll_year, cpib.name DESC
     ),
      cte_ceny AS (
     SELECT 
@@ -34,8 +52,24 @@ WITH cte_platy AS (
     FROM engeto_26_09_2024.czechia_price AS cp
     LEFT JOIN engeto_26_09_2024.czechia_price_category AS cpc 
     ON cp.category_code = cpc.code
+    WHERE YEAR(cp.date_from) >= (SELECT
+                                    CASE 
+                                        WHEN MIN(cpa.payroll_year) > MIN(YEAR(cpi.date_from)) THEN MIN(cpa.payroll_year)
+                                        WHEN MIN(YEAR(cpi.date_from)) > MIN(cpa.payroll_year) THEN MIN(YEAR(cpi.date_from))
+                                    END AS min_rok  -- vybírám větší z minimálních roků, abych data sjednotil na totožné období
+                                FROM engeto_26_09_2024.czechia_payroll AS cpa
+                                LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
+                                ON cpa.payroll_year = YEAR(cpi.date_from))
+    AND YEAR(cp.date_from) <= (SELECT
+                                    CASE 
+                                        WHEN MAX(cpa.payroll_year) > MAX(YEAR(cpi.date_from)) THEN MAX(YEAR(cpi.date_from))
+                                        WHEN MAX(YEAR(cpi.date_from)) > MAX(cpa.payroll_year) THEN MAX(cpa.payroll_year)
+                                END AS max_rok  -- vybírám menší z maximálních roků, abych data sjednotil na totožné období
+                                FROM engeto_26_09_2024.czechia_payroll AS cpa
+                                LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
+                                ON cpa.payroll_year = YEAR(cpi.date_from))
     GROUP BY rok, nazev, datovy_typ
-    ORDER BY cp.date_from DESC
+    ORDER BY YEAR(cp.date_from) DESC
     )
 SELECT cte_pl.*
 FROM cte_platy AS cte_pl

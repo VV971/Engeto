@@ -52,7 +52,3 @@ AND e.GDP IS NOT NULL
 AND e.`year` BETWEEN (SELECT MIN(zdroj.rok) FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj) 
 AND (SELECT MAX(zdroj.rok) FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj)
 ORDER BY region, country, `year` ASC;
-
-SELECT e.*
-FROM engeto_26_09_2024.economies AS e 
--- WHERE e.country LIKE '% Europe %'
