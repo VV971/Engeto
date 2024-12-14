@@ -1,3 +1,9 @@
+/*
+Výstup projektu: dvě tabulky v databázi, ze kterých se požadovaná data dají získat. Tabulky pojmenujte t_{jmeno}_{prijmeni}_project_SQL_primary_final (pro data mezd
+ a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky) a t_{jmeno}_{prijmeni}_project_SQL_secondary_final (pro dodatečná 
+ data o dalších evropských státech).
+*/
+
 CREATE TABLE IF NOT EXISTS t_vit_vogner_project_SQL_primary_final AS (
 WITH cte_platy AS (
     SELECT  
@@ -39,7 +45,7 @@ WITH cte_platy AS (
                             LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
                             ON cpa.payroll_year = YEAR(cpi.date_from))
     GROUP BY cp.payroll_year, cpib.name
-    ORDER BY cp.payroll_year, cpib.name DESC
+    ORDER BY cp.payroll_year, cpib.name ASC
     ),
      cte_ceny AS (
     SELECT 
@@ -69,7 +75,7 @@ WITH cte_platy AS (
                                 LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
                                 ON cpa.payroll_year = YEAR(cpi.date_from))
     GROUP BY rok, nazev, datovy_typ
-    ORDER BY YEAR(cp.date_from) DESC
+    ORDER BY YEAR(cp.date_from) ASC
     )
 SELECT cte_pl.*
 FROM cte_platy AS cte_pl
