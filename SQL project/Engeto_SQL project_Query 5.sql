@@ -33,3 +33,26 @@ Pomozte kolegům s daným úkolem. Výstupem by měly být dvě tabulky v datab�
 t_{jmeno}_{prijmeni}_project_SQL_primary_final (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období
  – společné roky) a t_{jmeno}_{prijmeni}_project_SQL_secondary_final (pro dodatečná data o dalších evropských státech).
 */
+
+SELECT e.*
+FROM engeto_26_09_2024.economies AS e 
+
+WITH cte_gdp_CZ AS (
+    SELECT
+        c.region_in_world AS region,
+        c.country AS country,
+    	c.abbreviation,
+    	e.`year`,
+    	e.GDP,
+    	e.population,
+    	c.currency_name,
+    	c.currency_code 
+    FROM engeto_26_09_2024.countries AS c
+    LEFT JOIN engeto_26_09_2024.economies AS e 
+    ON c.country = e.country 
+    WHERE c.continent = 'Europe'
+)
+SELECT cte_cz.*
+FROM cte_GDP_CZ AS cte_cz
+WHERE cte_cz.country = 'Czech Republic'
+AND cte_cz.GDP IS NOT NULL;

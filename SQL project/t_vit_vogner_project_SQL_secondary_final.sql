@@ -18,8 +18,6 @@ FROM engeto_26_09_2024.countries AS c
 LEFT JOIN engeto_26_09_2024.economies AS e 
 ON c.country = e.country 
 WHERE c.continent = 'Europe'    -- vybírám Evropu
-AND c.region_in_world IN ('Eastern Europe', 'Baltic Countries') -- vybírám střední Evropu a pobaltské státy
-AND c.country <> 'Czech Republic'   -- vylučuji ČR, pro kterou už mám podrobná data v primární tabulce
 AND e.GDP IS NOT NULL
 AND e.`year` BETWEEN (SELECT
                           CASE 
