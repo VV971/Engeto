@@ -1,5 +1,5 @@
 -- 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na 
--- cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
+-- cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
 /*
 Primární tabulky:
@@ -34,21 +34,21 @@ t_{jmeno}_{prijmeni}_project_SQL_primary_final (pro data mezd a cen potravin za 
  – společné roky) a t_{jmeno}_{prijmeni}_project_SQL_secondary_final (pro dodatečná data o dalších evropských státech).
 */
 
-WITH cte_HDP_CZ AS (
+WITH cte_vyvoj_HDP AS (
     SELECT
         c.region_in_world AS region,
         c.country AS stat,
-    	c.abbreviation AS zkratka_statu,
     	c.currency_code AS zkratka_meny,
     	e.`year` AS rok,
     	e.GDP AS HDP,
-    	LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`) AS HDP_minuly_rok,
-    	ROUND(e.GDP - LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`), 2) AS mezirocni_zmena_HDP_abs,
-    	(ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`), 5) - 1) * 100 AS mezirocni_zmena_HDP_procentni,
+    	LAG(e.GDP) OVER (ORDER BY e.`year`) AS HDP_minuly_rok,
+    	ROUND(e.GDP - LAG(e.GDP) OVER (PARTITION BY c.country ORDER BY e.`year`), 3) AS mezirocni_zmena_HDP_abs,
+    	(ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country ORDER BY e.`year`), 5) - 1) * 100 AS mezirocni_zmena_HDP_procentni,
     	CASE
-    	   WHEN ABS(((ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`), 5) - 1) * 100)) >= 2.5 THEN 'Změna HDP o více než 2,5%'
-    	   ELSE 'Změna HDP o méně než 2,5%'
-    	END AS hodnoceni_zmeny_HDP 
+           WHEN LAG(e.GDP) OVER (PARTITION BY c.country ORDER BY e.`year`) IS NULL THEN 'Chybí data'
+    	   WHEN ABS((ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country ORDER BY e.`year`), 5) - 1) * 100) >= 2.5 THEN 'Změna HDP větší než 2,5%'
+    	   WHEN ABS((ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country ORDER BY e.`year`), 5) - 1) * 100) < 2.5 THEN 'Změna HDP menší než 2,5%'
+    	END AS trend_HDP 
     FROM engeto_26_09_2024.countries AS c
     LEFT JOIN engeto_26_09_2024.economies AS e 
     ON c.country = e.country
@@ -59,61 +59,75 @@ WITH cte_HDP_CZ AS (
         SELECT 
             zdroj.rok,
             zdroj.nazev AS odvetvi,
-            AVG(zdroj.prumerna_hodnota) AS prumerny_plat,
-            LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) AS prumerny_plat_predchozi_rok,
-            AVG(zdroj.prumerna_hodnota) - LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) AS rozdil_prumernych_platu_abs,
-            (AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100 AS rozdil_prumernych_platu_procentne,
+            zdroj.prumerna_hodnota AS prumerny_plat,
+            LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerny_plat_predchozi_rok,
+            zdroj.prumerna_hodnota - LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS rozdil_prumernych_platu_abs,
+            ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) AS rozdil_prumernych_platu_procentne,
             CASE 
-                WHEN AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) > 5 THEN 'Růst platů o více než 5%'
-                WHEN AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) <= 5 THEN 'Růst platů o méně než 5%'
+                WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) > 0 THEN 'Růst platů'
+                WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) < 0 THEN 'Pokles platů'
             END AS trend_platu
         FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj
         WHERE zdroj.datovy_typ = 'Průměrná hrubá mzda na zaměstnance'
-        GROUP BY zdroj.rok
+        AND zdroj.rok BETWEEN 2006 AND 2018
+        GROUP BY zdroj.rok, zdroj.nazev
     ), cte_vyvoj_cen_potravin AS (
             SELECT
                 zdroj.rok,
                 zdroj.nazev AS potravina,
-                AVG(zdroj.prumerna_hodnota) AS prumerna_cena,
-                LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) AS prumerna_cena_predchozi_rok,
-                AVG(zdroj.prumerna_hodnota) - LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) AS rozdil_prumernych_cen_abs,
-                (AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100 AS rozdil_prumernych_cen_procentne,
+                zdroj.prumerna_hodnota AS prumerna_cena,
+                LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerna_cena_predchozi_rok,
+                zdroj.prumerna_hodnota - LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS rozdil_prumernych_cen_abs,
+                ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) AS rozdil_prumernych_cen_procentne,
                 CASE 
-                    WHEN AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) > 5 THEN 'Růst cen potravin o více než 5%'
-                    WHEN AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) <= 5 THEN 'Růst cen potravin o méně než 5 %'
+                    WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) > 0 THEN 'Růst cen potravin'
+                    WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) < 0 THEN 'Pokles cen potravin'
                 END AS trend_cen
             FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj 
             WHERE zdroj.datovy_typ = 'Pruměrná cena za jednotku'
-            GROUP BY zdroj.rok
+            AND zdroj.rok BETWEEN 2006 AND 2018
+            GROUP BY zdroj.rok, zdroj.nazev
     )
 SELECT 
-    cte_hdpcz.region,
-    cte_hdpcz.stat,
-    cte_hdpcz.zkratka_statu,
-    cte_hdpcz.zkratka_meny,
-    cte_hdpcz.rok,
-    cte_hdpcz.HDP,
-    cte_hdpcz.HDP_minuly_rok,
-    cte_hdpcz.mezirocni_zmena_HDP_abs,
-    cte_hdpcz.mezirocni_zmena_HDP_procentni,
-    cte_hdpcz.hodnoceni_zmeny_HDP,
-    cte_vcplat.odvetvi,
-    cte_vcplat.prumerny_plat,
-    cte_vcplat.prumerny_plat_predchozi_rok,
-    cte_vcplat.rozdil_prumernych_platu_abs,
-    cte_vcplat.rozdil_prumernych_platu_procentne,
-    cte_vcplat.trend_platu 
-FROM cte_HDP_CZ AS cte_hdpcz
-JOIN cte_vyvoj_platu AS cte_vcplat
-ON cte_hdpcz.rok = cte_vcplat.rok
-JOIN cte_vyvoj_cen_potravin AS cte_vcpotr
-ON cte_hdpcz.rok = cte_vcpotr.rok
-WHERE cte_hdpcz.hodnoceni_zmeny_HDP = 'Změna HDP o více než 2,5%'
-AND cte_vcplat.trend_platu = 'Růst platů o více než 5 %';
+    cte_hdp.region,
+    cte_hdp.stat,
+    cte_hdp.zkratka_meny,
+    cte_hdp.rok,
+    cte_hdp.HDP,
+    cte_hdp.HDP_minuly_rok,
+    cte_hdp.mezirocni_zmena_HDP_abs,
+    cte_hdp.mezirocni_zmena_HDP_procentni,
+    cte_hdp.trend_HDP,
+    cte_plat.odvetvi,
+    cte_plat.prumerny_plat,
+    cte_plat.prumerny_plat_predchozi_rok,
+    cte_plat.rozdil_prumernych_platu_abs,
+    cte_plat.rozdil_prumernych_platu_procentne,
+    cte_plat.trend_platu,
+    cte_potr.potravina,
+    cte_potr.prumerna_cena,
+    cte_potr.prumerna_cena_predchozi_rok,
+    cte_potr.prumerna_cena_predchozi_rok,
+    cte_potr.rozdil_prumernych_cen_procentne,
+    cte_potr.trend_cen
+FROM cte_vyvoj_HDP AS cte_hdp
+JOIN cte_vyvoj_platu AS cte_plat
+ON cte_hdp.rok = cte_plat.rok
+JOIN cte_vyvoj_cen_potravin AS cte_potr
+ON cte_hdp.rok = cte_potr.rok
+WHERE cte_hdp.trend_HDP = 'Změna HDP větší než 2,5%'
+AND cte_plat.trend_platu = 'Růst platů'
+AND cte_potr.trend_cen = 'Růst cen potravin';
+
 /*
-AND cte_vcpotr.trend_cen = 'Růst cen potravin o více než 5 %';
-*/
-/*
-,
-    cte_vcpotr.*,
-*/
+zdroj.rok,
+                zdroj.nazev AS potravina,
+                zdroj.prumerna_hodnota AS prumerna_cena,
+                LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS prumerna_cena_predchozi_rok,
+                zdroj.prumerna_hodnota - LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) AS rozdil_prumernych_cen_abs,
+                ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) AS rozdil_prumernych_cen_procentne,
+                CASE 
+                    WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) > 5 THEN 'Růst cen potravin o více než 5%'
+                    WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) <= 5 THEN 'Růst cen potravin o méně než 5 %'
+                END AS trend_cen
+ */
