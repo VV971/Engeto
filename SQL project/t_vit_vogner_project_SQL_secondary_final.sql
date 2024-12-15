@@ -11,6 +11,7 @@ SELECT
     c.abbreviation,
     e.`year`,
     e.GDP,
+    e.gini,
     e.population,
     c.currency_name,
     c.currency_code 
