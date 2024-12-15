@@ -1,0 +1,550 @@
+|region                      |country           |abbreviation|year |GDP                 |gini|population |currency_name    |currency_code|
+|----------------------------|------------------|------------|-----|--------------------|----|-----------|-----------------|-------------|
+|                            |Montenegro        |ME          |2,006|3,737,915,560.04535 |    |615,025    |                 |             |
+|                            |Montenegro        |ME          |2,007|3,992,473,234.91718 |    |615,875    |                 |             |
+|                            |Montenegro        |ME          |2,008|4,280,841,227.25932 |    |616,969    |                 |             |
+|                            |Montenegro        |ME          |2,009|4,032,762,450.51021 |    |618,294    |                 |             |
+|                            |Montenegro        |ME          |2,010|4,143,033,275.88493 |    |619,428    |                 |             |
+|                            |Montenegro        |ME          |2,011|4,276,787,738.05463 |    |620,079    |                 |             |
+|                            |Montenegro        |ME          |2,012|4,160,296,612.28314 |41.2|620,601    |                 |             |
+|                            |Montenegro        |ME          |2,013|4,307,944,887.65039 |39  |621,207    |                 |             |
+|                            |Montenegro        |ME          |2,014|4,384,784,936.38777 |38.8|621,810    |                 |             |
+|                            |Montenegro        |ME          |2,015|4,533,444,861.21991 |39  |622,159    |                 |             |
+|                            |Montenegro        |ME          |2,016|4,667,151,600.8246  |38.5|622,303    |                 |             |
+|                            |Montenegro        |ME          |2,017|4,887,274,946.92473 |    |622,373    |                 |             |
+|                            |Montenegro        |ME          |2,018|5,135,444,172.57865 |    |622,227    |                 |             |
+|Baltic Countries            |Estonia           |EE          |2,006|1,403,205,243.69945 |33.7|1,346,810  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,007|1,509,478,087.87613 |31.2|1,340,680  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,008|1,432,661,648.36718 |31.9|1,337,090  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,009|1,225,873,125.80184 |31.4|1,334,515  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,010|1,258,853,226.89866 |32  |1,331,475  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,011|1,352,344,121.715   |32.5|1,327,439  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,012|1,394,405,238.91226 |32.9|1,322,696  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,013|1,413,176,509.34604 |35.1|1,317,997  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,014|1,455,392,682.02426 |34.6|1,314,545  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,015|1,482,243,027.71369 |32.7|1,315,407  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,016|1,529,494,224.16303 |31.2|1,315,790  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,017|1,613,603,477.8319  |30.4|1,317,384  |Euro             |EUR          |
+|Baltic Countries            |Estonia           |EE          |2,018|1,683,883,408.75594 |30.3|1,321,977  |Euro             |EUR          |
+|Baltic Countries            |Latvia            |LV          |2,006|38,970,904,830.6932 |35.6|2,218,357  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,007|42,878,556,292.9244 |37.5|2,200,325  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,008|41,451,858,072.2391 |37.2|2,177,322  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,009|35,540,939,762.4485 |36  |2,141,669  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,010|33,974,713,228.7101 |35  |2,097,555  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,011|36,172,486,448.4331 |35.8|2,059,709  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,012|37,710,440,391.8362 |35.2|2,034,319  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,013|38,581,617,963.9437 |35.5|2,012,647  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,014|38,995,843,365.7812 |35.1|1,993,782  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,015|40,558,357,687.4366 |34.2|1,977,527  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,016|41,520,776,742.7396 |34.3|1,959,537  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,017|42,870,501,056.9186 |35.6|1,942,248  |Latvian Lats     |LVL          |
+|Baltic Countries            |Latvia            |LV          |2,018|44,595,743,365.806  |35.1|1,927,174  |Latvian Lats     |LVL          |
+|Baltic Countries            |Lithuania         |LT          |2,006|10,897,964,391.0828 |34.4|3,269,909  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,007|12,108,453,621.6011 |34.8|3,231,294  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,008|12,425,019,822.0591 |35.7|3,198,231  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,009|10,581,319,790.3218 |37.2|3,162,916  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,010|10,756,042,844.3535 |33.6|3,097,282  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,011|11,405,601,149.4605 |32.5|3,028,115  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,012|11,844,017,031.4634 |35.1|2,987,773  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,013|12,264,488,263.5827 |35.3|2,957,689  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,014|12,698,284,425.0764 |37.7|2,932,367  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,015|12,955,371,854.0676 |37.4|2,904,910  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,016|13,281,695,423.2095 |38.4|2,868,231  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,017|13,850,496,906.4725 |37.3|2,828,403  |Lithuanian Litas |LTL          |
+|Baltic Countries            |Lithuania         |LT          |2,018|14,395,769,626.2351 |35.7|2,801,543  |Lithuanian Litas |LTL          |
+|British Isles               |Ireland           |IE          |2,006|228,618,540,241.807 |32.7|4,273,591  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,007|240,778,055,809.957 |31.9|4,398,942  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,008|230,091,285,255.947 |30.9|4,489,544  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,009|218,414,850,981.939 |32.7|4,535,375  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,010|222,287,851,794.584 |32.3|4,560,155  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,011|223,624,003,883.013 |32.9|4,580,084  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,012|223,909,812,167.535 |33.2|4,599,533  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,013|226,656,857,706.201 |33.5|4,623,816  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,014|246,241,019,995.408 |31.9|4,657,740  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,015|308,235,649,867.516 |31.8|4,701,957  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,016|314,381,129,555.559 |32.8|4,755,335  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,017|343,082,365,981.679 |31.4|4,807,388  |Euro             |EUR          |
+|British Isles               |Ireland           |IE          |2,018|372,300,617,924.262 |    |4,867,316  |Euro             |EUR          |
+|British Isles               |United Kingdom    |UK          |2,006|2,483,917,165,662.06|34.6|60,846,820 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,007|2,542,551,914,678.86|35.7|61,322,463 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,008|2,535,463,784,367.3 |34.1|61,806,995 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,009|2,431,156,088,971.62|34.3|62,276,270 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,010|2,481,579,504,997.81|34.4|62,766,365 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,011|2,513,237,223,477.67|33.2|63,258,810 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,012|2,549,186,468,912.68|32.3|63,700,215 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,013|2,604,914,574,687.66|33.2|64,128,273 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,014|2,679,486,211,063.81|34  |64,602,298 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,015|2,742,804,332,759.55|33.2|65,116,219 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,016|2,790,046,007,973.58|34.8|65,611,593 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,017|2,838,601,442,114.14|35.1|66,058,859 |                 |GBP          |
+|British Isles               |United Kingdom    |UK          |2,018|2,874,157,497,314.14|    |66,460,344 |                 |GBP          |
+|Central and Southeast Europe|Serbia            |RS          |2,006|37,953,228,515.7138 |    |7,411,569  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,007|40,397,236,364.6127 |    |7,381,579  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,008|42,681,933,020.219  |    |7,350,222  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,009|41,515,968,465.9198 |    |7,320,807  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,010|41,819,468,691.8251 |    |7,291,436  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,011|42,671,028,784.1099 |    |7,234,099  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,012|42,380,207,643.5152 |39.9|7,199,077  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,013|43,606,113,097.5697 |39.5|7,164,132  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,014|42,912,989,429.7754 |40.5|7,130,576  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,015|43,688,023,451.3019 |40.5|7,095,383  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,016|45,146,586,020.325  |38.8|7,058,322  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,017|46,095,189,764.125  |36.2|7,020,858  |Serbian dinar    |RSD          |
+|Central and Southeast Europe|Serbia            |RS          |2,018|48,167,224,454.1516 |    |6,982,604  |Serbian dinar    |RSD          |
+|Eastern Europe              |Belarus           |BY          |2,006|44,266,566,187.7427 |28.3|9,604,924  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,007|48,073,493,773.2612 |29.6|9,560,953  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,008|52,976,989,868.7029 |27.8|9,527,985  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,009|53,082,941,363.8271 |27.7|9,506,765  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,010|57,222,490,768.7143 |28.6|9,490,583  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,011|60,300,321,142.6581 |27.2|9,473,172  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,012|61,317,669,289.2363 |26.5|9,464,495  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,013|61,932,974,220.8466 |26.6|9,465,997  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,014|63,002,175,707.5323 |27.2|9,474,511  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,015|60,589,462,935.5585 |25.6|9,489,616  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,016|59,058,702,608.9201 |25.3|9,501,534  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,017|60,554,177,331.8333 |25.4|9,498,264  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Belarus           |BY          |2,018|62,461,148,027.2823 |25.2|9,483,499  |Belarussian Ruble|BYR          |
+|Eastern Europe              |Bulgaria          |BG          |2,006|45,869,280,338.7161 |35.7|7,601,022  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,007|48,876,966,228.4417 |36.1|7,545,338  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,008|51,851,436,378.6577 |33.6|7,492,561  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,009|50,101,534,229.7147 |33.8|7,444,443  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,010|50,381,825,504.2642 |35.7|7,395,599  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,011|51,568,094,264.4734 |34.3|7,348,328  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,012|51,751,979,375.9177 |36  |7,305,888  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,013|51,920,571,507.3287 |36.6|7,265,115  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,014|52,899,515,523.1699 |37.4|7,223,938  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,015|55,010,127,749.7693 |38.6|7,177,991  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,016|57,111,753,665.4351 |40.6|7,127,822  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,017|59,112,236,490.8388 |40.4|7,075,947  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Bulgaria          |BG          |2,018|60,940,251,461.1954 |41.3|7,025,037  |Bulgarian Lev    |BGN          |
+|Eastern Europe              |Czech Republic    |CZ          |2,006|197,470,142,753.551 |26.7|10,238,905 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,007|208,469,898,850.69  |26  |10,298,828 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,008|214,070,259,127.502 |26.3|10,384,603 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,009|204,100,298,391.036 |26.2|10,443,936 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,010|209,069,940,963.177 |26.6|10,474,410 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,011|212,750,323,790.759 |26.4|10,496,088 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,012|211,080,224,602.858 |26.1|10,510,785 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,013|210,983,331,025.624 |26.5|10,514,272 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,014|215,755,991,069.112 |25.9|10,525,347 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,015|227,381,745,549.048 |25.9|10,546,059 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,016|233,151,067,380.883 |25.4|10,566,332 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,017|245,202,003,265.939 |24.9|10,594,438 |                 |CZK          |
+|Eastern Europe              |Czech Republic    |CZ          |2,018|253,045,172,103.95  |25  |10,629,928 |                 |CZK          |
+|Eastern Europe              |Hungary           |HU          |2,006|138,021,450,771.415 |28.3|10,071,370 |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,007|138,355,712,640.943 |27.9|10,055,780 |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,008|139,819,916,274.643 |27.5|10,038,188 |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,009|130,452,605,289.135 |27  |10,022,650 |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,010|131,916,516,051.985 |29.4|10,000,023 |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,011|134,471,881,165.37  |29.2|9,971,727  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,012|132,615,331,004.73  |30.8|9,920,362  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,013|135,082,972,930.623 |31.5|9,893,082  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,014|140,795,565,306.983 |30.9|9,866,468  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,015|146,173,151,085.081 |30.4|9,843,028  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,016|149,301,250,250.029 |30.3|9,814,023  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,017|155,746,258,233.436 |30.6|9,787,966  |Hungarian Forint |HUF          |
+|Eastern Europe              |Hungary           |HU          |2,018|164,156,103,282.558 |29.6|9,775,564  |Hungarian Forint |HUF          |
+|Eastern Europe              |Moldova           |MD          |2,006|6,239,767,852.66749 |35.4|2,880,095  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,007|6,426,960,903.2039  |34.4|2,873,429  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,008|6,928,263,862.95101 |34.7|2,867,964  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,009|6,512,568,011.12431 |32.9|2,864,346  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,010|6,974,960,345.3712  |32.1|2,861,487  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,011|7,380,775,144.91523 |30.6|2,859,833  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,012|7,337,248,195.12826 |29.2|2,859,458  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,013|8,000,819,052.00779 |28.5|2,858,692  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,014|8,400,830,055.05566 |26.8|2,856,950  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,015|8,372,415,480.26162 |27  |2,834,530  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,016|8,741,545,794.83075 |26.3|2,802,170  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,017|9,151,593,647.17486 |25.9|2,755,158  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Moldova           |MD          |2,018|9,545,247,410.92867 |25.7|2,708,214  |Moldovan Leu     |MDL          |
+|Eastern Europe              |Poland            |PL          |2,006|403,192,683,978.377 |34.7|38,141,267 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,007|431,664,312,008.755 |34  |38,120,560 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,008|449,794,050,343.249 |33.5|38,125,759 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,009|462,533,048,121.248 |33.4|38,151,603 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,010|479,834,179,020.33  |33.2|38,042,794 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,011|502,662,952,276.722 |33.2|38,063,255 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,012|509,322,687,626.439 |33  |38,063,164 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,013|515,056,478,625.676 |33.1|38,040,196 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,014|532,458,063,874.241 |32.8|38,011,735 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,015|555,014,724,902.995 |31.8|37,986,412 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,016|572,451,795,841.21  |31.2|37,970,087 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,017|600,104,964,680.131 |29.7|37,974,826 |Polish Zloty     |PLN          |
+|Eastern Europe              |Poland            |PL          |2,018|632,232,812,655.457 |30.2|37,974,750 |Polish Zloty     |PLN          |
+|Eastern Europe              |Romania           |RO          |2,006|156,266,346,693.626 |39.6|21,193,760 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,007|167,570,353,781.434 |37.5|20,882,982 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,008|183,166,909,447.59  |36.4|20,537,875 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,009|173,060,868,628.322 |35.6|20,367,487 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,010|166,309,355,234.589 |35.5|20,246,871 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,011|169,479,324,149.248 |35.9|20,147,528 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,012|172,937,829,621.072 |36.5|20,058,035 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,013|179,459,249,986.084 |36.9|19,983,693 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,014|185,935,438,388.184 |36  |19,908,979 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,015|191,427,365,158.106 |35.9|19,815,616 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,016|200,430,189,829.58  |34.4|19,702,267 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,017|215,100,574,411.243 |36  |19,588,715 |Romanian New Leu |RON          |
+|Eastern Europe              |Romania           |RO          |2,018|224,725,300,753.379 |35.8|19,473,970 |Romanian New Leu |RON          |
+|Eastern Europe              |Russian Federation|RU          |2,006|1,386,608,432,989.65|41  |143,049,637|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,007|1,504,469,841,529.42|42.3|142,805,114|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,008|1,582,701,810,889.97|41.6|142,742,366|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,009|1,459,251,165,972.78|39.8|142,785,349|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,010|1,524,917,468,442.01|39.5|142,849,468|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,011|1,590,489,364,644.29|39.7|142,960,908|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,012|1,654,492,026,998.83|40.7|143,201,721|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,013|1,683,535,346,495.76|40.9|143,506,995|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,014|1,695,930,665,412.95|39.9|143,819,667|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,015|1,662,474,715,110.35|37.7|144,096,870|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,016|1,665,694,763,578.53|36.8|144,342,397|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,017|1,696,106,853,061.04|37.2|144,496,739|                 |RUB          |
+|Eastern Europe              |Russian Federation|RU          |2,018|1,743,720,734,850.68|37.5|144,477,859|                 |RUB          |
+|Eastern Europe              |Slovakia          |SK          |2,006|77,183,191,548.8511 |25.8|5,373,054  |Euro             |EUR          |
+|Eastern Europe              |Slovakia          |SK          |2,007|85,543,697,111.3733 |24.7|5,374,622  |Euro             |EUR          |
+|Eastern Europe              |Slovakia          |SK          |2,008|90,312,661,014.7879 |26  |5,379,233  |Euro             |EUR          |
+|Eastern Europe              |Slovakia          |SK          |2,009|85,385,623,781.6126 |27.2|5,386,406  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,010|90,398,832,433.9335 |27.3|5,391,428  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,011|92,972,684,423.6731 |26.5|5,398,384  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,012|94,736,136,629.9989 |26.1|5,407,579  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,013|95,367,586,177.8506 |28.1|5,413,393  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,014|97,886,806,555.4282 |26.1|5,418,649  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,015|102,599,958,081.508 |26.5|5,423,801  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,016|104,788,135,893.823 |25.2|5,430,798  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,017|107,920,798,507.243 |    |5,439,232  |Euro             |EUR          |
+|Eastern Europe              |Slovakia              |SK          |2,018|111,860,040,781.458 |25  |5,446,771  |Euro             |EUR          |
+|Eastern Europe              |Ukraine               |UA          |2,006|139,607,929,641.793 |29.8|46,787,786 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,007|150,209,086,270.689 |27  |46,509,355 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,008|153,669,941,036.719 |26.6|46,258,189 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,009|130,990,467,246.875 |25.3|46,053,331 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,010|136,013,155,905.036 |24.8|45,870,741 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,011|143,446,957,451.616 |24.6|45,706,086 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,012|143,789,339,118.051 |24.7|45,593,342 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,013|143,750,950,398.359 |24.6|45,489,648 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,014|134,331,480,637.625 |24  |45,272,155 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,015|121,203,317,705.377 |25.5|45,154,036 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,016|123,912,293,812.632 |25  |45,004,673 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,017|126,968,015,121.443 |26  |44,831,135 |Ukraine Hryvnia  |UAH          |
+|Eastern Europe              |Ukraine               |UA          |2,018|131,291,651,249.309 |26.1|44,622,518 |Ukraine Hryvnia  |UAH          |
+|Nordic Countries            |Denmark               |DK          |2,006|331,090,561,927.791 |25.9|5,437,272  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,007|334,100,966,204.774 |26.2|5,461,438  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,008|332,390,313,313.103 |25.2|5,493,621  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,009|316,081,423,941.657 |26.7|5,523,095  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,010|321,995,279,401.502 |27.2|5,547,683  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,011|326,299,640,707.019 |27.3|5,570,572  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,012|327,038,708,713.874 |27.8|5,591,572  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,013|330,091,094,977.815 |28.5|5,614,932  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,014|335,436,569,740.648 |28.4|5,643,475  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,015|343,294,476,994.931 |28.2|5,683,483  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,016|354,437,668,050.905 |28.2|5,728,010  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,017|364,438,964,537.519 |28.7|5,764,980  |Danish Krone     |DKK          |
+|Nordic Countries            |Denmark               |DK          |2,018|372,367,867,708.325 |28.2|5,793,636  |Danish Krone     |DKK          |
+|Nordic Countries            |Faroe Islands         |FO          |2,010|2,320,424,601.26954 |    |47,803     | Danish Krone    |DKK          |
+|Nordic Countries            |Finland               |FI          |2,006|247,779,130,164.083 |28  |5,266,268  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,007|260,909,780,066.563 |28.3|5,288,720  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,008|262,955,299,855.628 |27.8|5,313,399  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,009|241,723,112,398.309 |27.5|5,338,871  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,010|249,424,310,816.667 |27.7|5,363,352  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,011|255,778,806,281.83  |27.6|5,388,272  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,012|252,204,180,501.055 |27.1|5,413,971  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,013|249,930,064,696.187 |27.2|5,438,972  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,014|249,018,049,503.61  |26.8|5,461,512  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,015|250,371,859,068.695 |27.1|5,479,531  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,016|257,410,958,145.949 |27.1|5,495,303  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,017|265,628,570,361.662 |27.4|5,508,214  |Euro             |EUR          |
+|Nordic Countries            |Finland               |FI          |2,018|269,113,179,058.496 |27.3|5,515,525  |Euro             |EUR          |
+|Nordic Countries            |Iceland               |IS          |2,006|13,826,344,571.668  |30.2|303,782    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,007|14,995,342,661.6113 |29.5|311,566    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,008|15,326,664,220.7095 |31.8|317,414    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,009|14,152,057,862.8939 |28.7|318,499    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,010|13,751,161,917.7398 |26.2|318,041    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,011|14,004,977,998.1585 |26.8|319,014    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,012|14,153,940,071.0105 |26.8|320,716    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,013|14,798,292,576.4812 |25.4|323,764    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,014|15,047,971,591.1662 |27.8|327,386    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,015|15,715,599,487.2528 |26.8|330,815    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,016|16,706,261,705.8402 |27.2|335,439    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,017|17,407,080,835.653  |26.1|343,400    |Iceland Krona    |ISK          |
+|Nordic Countries            |Iceland               |IS          |2,018|18,227,792,282.9059 |    |352,721    |Iceland Krona    |ISK          |
+|Nordic Countries            |Norway                |NO          |2,006|418,661,275,147.645 |26.4|4,660,677  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,007|431,197,048,129.248 |27.1|4,709,153  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,008|433,251,184,624.934 |27  |4,768,212  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,009|425,768,848,675.368 |26.2|4,828,726  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,010|428,757,038,466.841 |25.7|4,889,252  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,011|432,965,007,871.716 |25.3|4,953,088  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,012|444,668,526,003.851 |25.7|5,018,573  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,013|449,266,722,786.278 |26.4|5,079,623  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,014|458,115,229,920.278 |26.8|5,137,232  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,015|467,126,944,887.83  |27.5|5,188,607  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,016|472,132,485,600.729 |28.5|5,234,519  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,017|483,101,343,264.083 |27  |5,276,968  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Norway                |NO          |2,018|488,506,420,357     |27.6|5,311,916  |Norwegian Krone  |NOK          |
+|Nordic Countries            |Sweden                |SE          |2,006|475,064,446,275.73  |26.4|9,080,505  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,007|491,402,966,162.082 |27.1|9,148,092  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,008|489,188,904,610.127 |28.1|9,219,637  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,009|467,959,130,636.214 |27.3|9,298,515  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,010|495,812,558,843.31  |27.7|9,378,126  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,011|511,655,422,318.786 |27.6|9,449,213  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,012|508,645,330,091.796 |27.6|9,519,374  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,013|514,686,895,802.716 |28.8|9,600,379  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,014|528,366,235,242.641 |28.4|9,696,110  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,015|552,086,083,358.095 |29.2|9,799,186  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,016|563,517,539,985.087 |29.6|9,923,085  |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,017|577,988,245,098.533 |28.8|10,057,698 |Swedish Krona    |SEK          |
+|Nordic Countries            |Sweden                |SE          |2,018|589,259,147,923.413 |30  |10,175,214 |Swedish Krona    |SEK          |
+|Southern Europe             |Albania               |AL          |2,006|9,767,379,279.88863 |    |2,992,547  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,007|10,351,466,806.2388 |    |2,970,017  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,008|11,127,823,665.7504 |30  |2,947,314  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,009|11,500,613,161.6647 |    |2,927,519  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,010|11,926,928,505.5231 |    |2,913,021  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,011|12,230,507,222.1843 |    |2,905,195  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,012|12,403,877,841.0321 |29  |2,900,401  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,013|12,528,163,103.1195 |    |2,895,092  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,014|12,750,473,701.7819 |34.6|2,889,104  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,015|13,033,375,121.5884 |32.9|2,880,703  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,016|13,465,406,059.6498 |33.7|2,876,101  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,017|13,977,387,390.5945 |33.2|2,873,457  |Albanian Lek     |ALL          |
+|Southern Europe             |Albania               |AL          |2,018|14,546,448,944.4056 |    |2,866,376  |Albanian Lek     |ALL          |
+|Southern Europe             |Andorra               |AD          |2,006|3,875,142,516.24022 |    |80,995     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,007|3,935,330,770.25056 |    |82,682     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,008|3,716,558,398.51518 |    |83,860     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,009|3,519,475,009.94299 |    |84,461     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,010|3,449,966,856.68832 |    |84,454     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,011|3,449,688,452.87021 |    |83,748     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,012|3,278,085,642.31738 |    |82,427     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,013|3,161,792,390.29564 |    |80,770     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,014|3,240,978,390.56079 |    |79,213     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,015|3,287,458,570.8604  |    |77,993     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,016|3,409,412,700.51704 |    |77,295     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,017|3,421,211,719.47501 |    |76,997     |Euro             |EUR          |
+|Southern Europe             |Andorra               |AD          |2,018|3,475,566,750.62972 |    |77,008     |Euro             |EUR          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,006|15,729,153,560.7731 |    |3,765,422  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,007|16,650,743,291.5849 |33.1|3,762,791  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,008|17,556,851,230.7796 |    |3,754,261  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,009|17,029,363,372.8317 |    |3,735,945  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,010|17,176,781,336.7644 |    |3,705,478  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,011|17,341,594,485.6047 |33  |3,661,173  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,012|17,199,074,936.9112 |    |3,604,972  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,013|17,603,228,545.3329 |    |3,542,598  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,014|17,806,343,590.1312 |    |3,482,106  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,015|18,356,410,773.0628 |    |3,429,362  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,016|18,934,602,269.0509 |    |3,386,263  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,017|19,535,100,848.8297 |    |3,351,534  |                 |BAM          |
+|Southern Europe             |Bosnia and Herzegovina|BA          |2,018|20,265,727,508.4724 |    |3,323,929  |                 |BAM          |
+|Southern Europe             |Croatia               |HR          |2,006|61,197,075,793.9092 |    |4,311,159  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,007|64,298,314,188.4647 |    |4,310,217  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,008|65,515,772,483.174  |    |4,309,705  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,009|60,717,700,435.3099 |32.6|4,305,181  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,010|59,918,313,669.1671 |32.4|4,295,427  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,011|59,799,454,151.6423 |32.3|4,280,622  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,012|58,369,186,194.0968 |32.5|4,267,558  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,013|58,108,222,128.8461 |32  |4,255,689  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,014|57,909,810,141.88   |32.1|4,238,389  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,015|59,318,112,197.5722 |31.1|4,203,604  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,016|61,393,139,836.7654 |30.9|4,174,349  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,017|63,504,583,355.145  |30.4|4,124,531  |Croatian Kuna    |HRK          |
+|Southern Europe             |Croatia               |HR          |2,018|65,287,544,197.8689 |29.7|4,087,843  |Croatian Kuna    |HRK          |
+|Southern Europe             |Greece                |GR          |2,006|319,132,136,925.793 |35.1|11,020,362 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,007|329,579,715,229.25  |34  |11,048,473 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,008|328,475,055,055.053 |33.6|11,077,841 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,009|314,348,217,058.93  |33.6|11,107,017 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,010|297,124,961,971.501 |34.1|11,121,341 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,011|266,968,814,916.016 |34.8|11,104,899 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,012|248,061,138,528.468 |36.3|11,045,011 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,013|241,259,867,501.329 |36.1|10,965,211 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,014|242,944,211,867.598 |35.8|10,892,413 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,015|241,943,520,921.99  |36  |10,820,883 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,016|240,758,353,595.684 |35  |10,775,971 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,017|243,842,046,377.8   |34.4|10,754,679 |Euro             |EUR          |
+|Southern Europe             |Greece                |GR          |2,018|247,643,489,387.938 |32.9|10,732,882 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,006|2,205,941,135,644.34|33.7|58,143,979 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,007|2,238,745,090,235.33|32.9|58,438,310 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,008|2,217,208,074,999.43|33.8|58,826,731 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,009|2,100,118,708,781.5 |33.8|59,095,365 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,010|2,136,099,955,236.67|34.7|59,277,417 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,011|2,151,209,302,546.05|35.1|59,379,449 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,012|2,087,083,780,359.59|35.2|59,539,717 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,013|2,048,659,201,948.41|34.9|60,233,948 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,014|2,048,566,038,303.31|34.7|60,789,140 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,015|2,064,510,116,906.73|35.4|60,730,582 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,016|2,091,213,785,858.19|35.2|60,627,498 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,017|2,126,092,284,053.69|35.9|60,536,709 |Euro             |EUR          |
+|Southern Europe             |Italy                 |IT          |2,018|2,146,114,485,858.04|    |60,421,760 |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,006|7,960,297,513.94763 |28  |405,308    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,007|8,340,378,285.12884 |29.2|406,724    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,008|8,659,511,134.94235 |29  |409,379    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,009|8,561,323,235.70686 |30.2|412,477    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,010|9,035,932,122.49768 |29  |414,508    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,011|9,078,134,520.83534 |29.1|416,268    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,012|9,451,945,528.64474 |29.4|420,028    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,013|9,969,284,127.5679  |28.8|425,967    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,014|10,730,293,230.9693 |29  |434,558    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,015|11,761,274,055.5891 |29.4|445,053    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,016|12,242,418,065.7844 |29.1|455,356    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,017|13,236,432,054.2372 |29.2|467,999    |Euro             |EUR          |
+|Southern Europe             |Malta                 |MT          |2,018|13,921,976,625.3068 |28.7|484,630    |Euro             |EUR          |
+|Southern Europe             |North Macedonia       |MK          |2,006|8,138,242,511.94872 |    |2,063,132  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,007|8,665,070,571.39311 |    |2,065,408  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,008|9,139,223,353.51773 |    |2,067,309  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,009|9,106,448,740.75946 |42.8|2,069,030  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,010|9,412,311,665.9492  |40.2|2,070,737  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,011|9,632,549,033.15179 |39.4|2,072,484  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,012|9,588,606,960.45675 |38.1|2,074,275  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,013|9,869,098,420.48675 |36.2|2,076,065  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,014|10,227,260,191.7624 |35.2|2,077,780  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,015|10,621,609,552.3164 |35.6|2,079,335  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,016|10,924,134,787.2329 |34.5|2,080,746  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,017|11,042,309,099.238  |34.2|2,081,996  |Denar            |MKD          |
+|Southern Europe             |North Macedonia       |MK          |2,018|11,360,393,491.8192 |33  |2,082,957  |Denar            |MKD          |
+|Southern Europe             |Portugal              |PT          |2,006|234,931,199,934.205 |38.1|10,522,288 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,007|240,819,937,572.726 |36.8|10,542,964 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,008|241,588,750,226.565 |36.6|10,558,177 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,009|234,046,157,573.901 |34.9|10,568,247 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,010|238,113,003,233.284 |35.8|10,573,100 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,011|234,074,214,334.376 |36.3|10,557,560 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,012|224,577,136,198.924 |36  |10,514,844 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,013|222,505,087,211.577 |36.2|10,457,295 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,014|224,267,750,933.647 |35.6|10,401,062 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,015|228,286,732,295.719 |35.5|10,358,076 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,016|232,896,949,514.553 |35.2|10,325,452 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,017|241,063,120,722.329 |33.8|10,300,300 |Euro             |EUR          |
+|Southern Europe             |Portugal              |PT          |2,018|247,931,796,009.536 |33.5|10,283,822 |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,006|2,082,324,147.78876 |    |29,694     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,007|2,230,363,289.08025 |    |30,068     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,008|2,219,190,523.69976 |    |30,434     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,009|1,990,148,833.39972 |    |30,825     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,010|1,881,214,370.93994 |    |31,221     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,011|1,724,795,655.61309 |    |31,655     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,012|1,603,291,832.10026 |    |32,103     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,013|1,590,722,471.04721 |    |32,554     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,014|1,579,549,705.66672 |    |32,941     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,015|1,615,745,175.01546 |    |33,270     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,016|1,653,624,799.59014 |    |33,503     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,017|1,657,895,541.39012 |    |33,671     |Euro             |EUR          |
+|Southern Europe             |San Marino            |SM          |2,018|1,683,506,067.26526 |    |33,784     |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,006|46,464,917,542.2106 |24.4|2,006,868  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,007|49,708,243,481.106  |24.4|2,018,122  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,008|51,452,924,048.1751 |23.7|2,021,316  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,009|47,569,032,084.5723 |24.8|2,039,669  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,010|48,208,240,226.4501 |24.9|2,048,583  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,011|48,623,471,168.9764 |24.9|2,052,843  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,012|47,340,084,426.0571 |25.6|2,057,159  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,013|46,852,821,092.7902 |26.2|2,059,953  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,014|48,149,781,597.2791 |25.7|2,061,980  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,015|49,213,931,063.9334 |25.4|2,063,531  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,016|50,784,767,161.7182 |24.8|2,065,042  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,017|53,219,159,738.4832 |24.2|2,066,388  |Euro             |EUR          |
+|Southern Europe             |Slovenia              |SI          |2,018|55,552,554,713.0659 |24.6|2,073,894  |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,006|1,411,461,390,559.29|33.5|44,397,319 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,007|1,462,340,169,523.89|34.1|45,226,803 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,008|1,475,313,249,889.36|34.2|45,954,106 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,009|1,419,793,790,647.73|34.9|46,362,946 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,010|1,422,108,199,783.34|35.2|46,576,897 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,011|1,410,526,928,100.77|35.7|46,742,697 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,012|1,368,783,211,618.46|35.4|46,773,055 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,013|1,349,135,775,978.08|36.2|46,620,045 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,014|1,367,806,573,139.25|36.1|46,480,882 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,015|1,420,264,316,878.6 |36.2|46,444,832 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,016|1,463,316,808,003.09|35.8|46,484,062 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,017|1,506,830,599,353.93|34.7|46,593,236 |Euro             |EUR          |
+|Southern Europe             |Spain                 |ES          |2,018|1,543,447,293,320.58|34.7|46,797,754 |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,006|380,329,113,681.259 |29.6|8,268,641  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,007|394,505,559,258.526 |30.6|8,295,487  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,008|400,267,011,848.042 |30.4|8,321,496  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,009|385,198,647,266.611 |31.5|8,343,323  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,010|392,275,107,258.667 |30.3|8,363,404  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,011|403,740,513,438.199 |30.8|8,391,643  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,012|406,487,747,903.707 |30.5|8,429,991  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,013|406,591,421,433.927 |30.8|8,479,823  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,014|409,280,100,109.633 |30.5|8,546,356  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,015|413,432,253,216.039 |30.5|8,642,699  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,016|421,657,228,102.472 |30.8|8,736,668  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,017|431,775,262,676.529 |29.7|8,797,566  |Euro             |EUR          |
+|Western Europe              |Austria               |AT          |2,018|442,915,585,749.024 |30.8|8,840,521  |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,006|458,677,622,724.361 |28.1|10,547,958 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,007|475,542,653,709.135 |29.2|10,625,700 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,008|477,667,990,477.055 |28.4|10,709,973 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,009|468,015,547,701.557 |28.6|10,796,493 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,010|481,420,882,905.001 |28.4|10,895,586 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,011|489,578,626,676.653 |28.1|11,038,264 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,012|493,197,676,499.208 |27.5|11,106,932 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,013|495,462,648,324.133 |27.7|11,159,407 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,014|503,283,690,440.236 |28.1|11,209,057 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,015|513,558,020,680.56  |27.7|11,274,196 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,016|520,063,190,330.958 |27.6|11,331,422 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,017|528,496,260,419.776 |27.4|11,375,158 |Euro             |EUR          |
+|Western Europe              |Belgium               |BE          |2,018|537,945,351,170.51  |27.2|11,427,054 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,006|2,601,491,774,613.78|29.7|63,621,376 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,007|2,664,571,088,541.21|32.4|64,016,227 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,008|2,671,364,304,886.08|33  |64,374,979 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,009|2,594,607,624,904.28|32.7|64,707,035 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,010|2,645,187,882,116.67|33.7|65,027,505 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,011|2,703,188,933,543.06|33.3|65,342,789 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,012|2,711,653,557,481.26|33.1|65,659,814 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,013|2,727,281,540,260.42|32.5|65,998,685 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,014|2,753,359,344,138.85|32.3|66,312,067 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,015|2,784,001,820,060.14|32.7|66,548,272 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,016|2,814,499,568,997.83|31.9|66,724,104 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,017|2,878,991,574,857.68|31.6|66,918,020 |Euro             |EUR          |
+|Western Europe              |France                |FR          |2,018|2,930,607,976,267.93|32.4|67,101,930 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,006|3,328,325,430,555.39|31.3|82,376,451 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,007|3,427,391,543,620.05|31.3|82,266,372 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,008|3,460,290,359,872.83|31.1|82,110,097 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,009|3,263,267,090,017.34|30.5|81,902,307 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,010|3,399,667,820,000.01|30.2|81,776,930 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,011|3,533,111,333,252.44|30.5|80,274,983 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,012|3,547,897,319,183.13|30.9|80,425,823 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,013|3,563,422,609,296.38|31.1|80,645,605 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,014|3,642,157,979,491.28|30.9|80,982,500 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,015|3,696,496,482,672.59|31.7|81,686,611 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,016|3,778,928,349,350.17|31.9|82,348,669 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,017|3,877,255,158,232.27|    |82,657,002 |Euro             |EUR          |
+|Western Europe              |Germany               |DE          |2,018|3,926,418,568,780.85|    |82,905,782 |Euro             |EUR          |
+|Western Europe              |Liechtenstein         |LI          |2,010|5,082,366,478.08994 |    |35,996     |Swiss Franc      |CHF          |
+|Western Europe              |Luxembourg            |LU          |2,006|49,648,546,045.1779 |30.9|472,637    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,007|53,796,460,668.8657 |31.1|479,993    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,008|53,108,088,559.7831 |32.6|488,650    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,009|50,793,315,934.8984 |31.2|497,783    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,010|53,264,394,998.6001 |30.5|506,953    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,011|54,616,903,567.9042 |32.1|518,347    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,012|54,424,368,010.6887 |34.3|530,946    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,013|56,413,236,518.3812 |32  |543,360    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,014|58,837,192,739.3142 |31.2|556,319    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,015|61,370,976,137.0688 |32.9|569,604    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,016|64,178,453,456.4681 |31.7|582,014    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,017|65,334,423,537.5936 |34.5|596,336    |Euro             |EUR          |
+|Western Europe              |Luxembourg            |LU          |2,018|67,366,870,478.9246 |35.4|607,950    |Euro             |EUR          |
+|Western Europe              |Monaco                |MC          |2,006|5,145,300,278.40382 |    |34,189     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,007|5,887,710,460.02917 |    |34,524     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,008|5,926,971,761.89845 |    |34,860     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,009|5,257,223,916.21371 |    |35,223     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,010|5,367,625,613.15127 |    |35,609     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,011|5,743,359,406.07185 |    |36,025     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,012|5,800,793,053.16187 |    |36,459     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,013|6,357,669,097.17619 |    |36,899     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,014|6,815,421,317.77807 |    |37,320     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,015|7,149,376,905.74042 |    |37,723     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,016|7,399,605,196.87127 |    |38,070     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,017|7,148,018,560.25454 |    |38,392     |                 |EUR          |
+|Western Europe              |Monaco                |MC          |2,018|7,584,047,726.36882 |    |38,682     |                 |EUR          |
+|Western Europe              |Netherlands           |NL          |2,006|818,656,877,650.488 |30  |16,346,101 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,007|849,543,512,429.438 |29.6|16,381,696 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,008|867,981,366,402.608 |29.3|16,445,593 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,009|836,153,497,098.728 |27.9|16,530,388 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,010|847,380,859,016.668 |27.8|16,615,394 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,011|860,525,340,337.452 |27.8|16,693,074 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,012|851,658,883,145.551 |27.6|16,754,962 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,013|850,550,233,737.807 |28.1|16,804,432 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,014|862,656,926,597.85  |28.6|16,865,008 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,015|879,557,839,900.357 |28.2|16,939,923 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,016|898,835,229,746.291 |28.2|17,030,314 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,017|924,999,447,038.053 |28.5|17,131,296 |Euro             |EUR          |
+|Western Europe              |Netherlands           |NL          |2,018|946,837,898,609.854 |28.1|17,231,624 |Euro             |EUR          |
+|Western Europe              |Switzerland           |CH          |2,006|558,432,011,619.952 |33.9|7,483,934  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,007|580,745,403,737.188 |34.3|7,551,117  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,008|596,747,909,749.776 |33.8|7,647,675  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,009|584,337,741,980.175 |32.9|7,743,831  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,010|603,434,493,402.679 |32.6|7,824,909  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,011|615,023,126,905.369 |31.7|7,912,398  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,012|622,509,149,394.166 |31.6|7,996,861  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,013|633,849,198,063.623 |32.5|8,089,346  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,014|649,358,506,468.394 |32.5|8,188,649  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,015|660,123,368,612.609 |32.3|8,282,396  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,016|673,624,122,427.937 |33  |8,373,338  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,017|684,299,849,661.364 |32.7|8,451,840  |Swiss Franc      |CHF          |
+|Western Europe              |Switzerland           |CH          |2,018|704,920,576,240.946 |33.1|8,514,329  |Swiss Franc      |CHF          |

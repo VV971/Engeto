@@ -1,0 +1,3 @@
+|nazev_potraviny|prumerna_mezirocni_zmena_ceny_potraviny_procentne|
+|---------------|-------------------------------------------------|
+|Cukr krystalový|11.7696 %                                        |
