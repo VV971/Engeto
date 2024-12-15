@@ -41,13 +41,22 @@ WITH cte_gdp_CZ AS (
     	c.abbreviation,
     	e.`year`,
     	e.GDP,
+    	LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`) AS GDP_previous_year,
+    	ROUND(e.GDP - LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`), 2) AS GDP_YtY_difference_abs,
+    	(ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`), 5) - 1) * 100 AS GDP_YtY_difference_percentage,
+    	CASE
+    	   WHEN ABS(((ROUND(e.GDP / LAG(e.GDP) OVER (PARTITION BY c.country AND e.`year` ORDER BY e.`year`), 5) - 1) * 100)) >= 2.5 THEN 'Significant YtY change of GDP'
+    	   ELSE 'Unsignificant YtY change of GDP'
+    	END AS GDP_change_evaluation,    	
     	e.population,
-    	c.currency_name,
     	c.currency_code 
     FROM engeto_26_09_2024.countries AS c
     LEFT JOIN engeto_26_09_2024.economies AS e 
-    ON c.country = e.country 
+    ON c.country = e.country
     WHERE c.continent = 'Europe'
+    AND e.`year` BETWEEN 2006 AND 2018
+    AND c.country = 'Czech Republic'
+    /*
     AND e.`year` BETWEEN (SELECT
                               CASE 
                                   WHEN MIN(cpa.payroll_year) > MIN(YEAR(cpi.date_from)) THEN MIN(cpa.payroll_year)
@@ -64,8 +73,17 @@ WITH cte_gdp_CZ AS (
             FROM engeto_26_09_2024.czechia_payroll AS cpa
             LEFT JOIN engeto_26_09_2024.czechia_price AS cpi
             ON cpa.payroll_year = YEAR(cpi.date_from))
+    */
+), WITH cte_salaries_prices AS (
+    SELECT 
+        zdroj.rok AS `year`,
+        zdroj.kod,
+        zdroj.nazev,
+        zdroj.datovy_typ,
+        zdroj.prumerna_hodnota,
+        zdroj.jednotka
+    FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj
+    WHERE zdroj.rok BETWEEN 2006 AND 2018
 )
 SELECT cte_cz.*
-FROM cte_GDP_CZ AS cte_cz
-WHERE cte_cz.country = 'Czech Republic'
-AND cte_cz.GDP IS NOT NULL;
+FROM cte_GDP_CZ AS cte_cz;
