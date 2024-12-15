@@ -28,7 +28,7 @@ SELECT
 	cte_pz.rok,
 	cte_pz.odvetvi,
 	cte_pz.typ_platu,
-	CONCAT(FORMAT(cte_pz.prumerny_plat, 2), ',- Kč') AS average_pay,
+	CONCAT(FORMAT(cte_pz.prumerny_plat, 2), ',- Kč') AS prumerny_plat,
 	cte_pz.mezirocni_trend,
 	CONCAT(FORMAT(cte_pz.prumerny_plat_predchozi_rok, 2), ',- Kč') AS prumerny_plat_predchozi_rok,
 	CONCAT(FORMAT(cte_pz.prumerna_mezirocni_zmena_platu_abs, 2), ',- Kč') AS prumerna_mezirocni_zmena_platu_abs,

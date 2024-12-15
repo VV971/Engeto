@@ -8,8 +8,8 @@ WITH cte_vyvoj_cen_potravin AS (
         AVG(zdroj.prumerna_hodnota) - LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) AS rozdil_prumernych_cen_abs,
         (AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100 AS rozdil_prumernych_cen_procentne,
         CASE 
-            WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) > 10 THEN 'Růst cen potravin o více než 10 %'
-            WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) <= 10 THEN 'Růst cen potravin o méně než 10 %'
+            WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) > 10 THEN 'Růst cen potravin větší než 10%'
+            WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) <= 10 THEN 'Růst cen potravin o 10 a méně %'
         END AS trend_cen
     FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj 
     WHERE zdroj.datovy_typ = 'Pruměrná cena za jednotku'
@@ -23,8 +23,8 @@ WITH cte_vyvoj_cen_potravin AS (
             AVG(zdroj.prumerna_hodnota) - LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) AS rozdil_prumernych_platu_abs,
             (AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100 AS rozdil_prumernych_platu_procentne,
             CASE 
-                WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) > 10 THEN 'Růst platů o více než 10%'
-                WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) <= 10 THEN 'Růst platů o méně než 10 %'
+                WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) > 10 THEN 'Růst platů větší než 10%'
+                WHEN ((AVG(zdroj.prumerna_hodnota) / LAG(AVG(zdroj.prumerna_hodnota)) OVER (ORDER BY zdroj.rok) * 100) - 100) <= 10 THEN 'Růst platů o 10 a méně %'
             END AS trend_platu
         FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj
         WHERE zdroj.datovy_typ = 'Průměrná hrubá mzda na zaměstnance'

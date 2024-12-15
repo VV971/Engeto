@@ -48,7 +48,7 @@ WITH cte_vyvoj_HDP AS (
                 ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) AS mezirocni_zmena_cen_procentne,
                 CASE 
                     WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) >= 5 THEN 'Růst cen potravin o 5 a více %'
-                    WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) < 5 THEN 'Růst cen potravin o méně než 5 %'
+                    WHEN ROUND((zdroj.prumerna_hodnota / LAG(zdroj.prumerna_hodnota) OVER (PARTITION BY zdroj.nazev ORDER BY zdroj.rok) - 1 ) * 100, 3) < 5 THEN 'Růst cen potravin o méně než 5%'
                 END AS trend_cen
             FROM engeto_26_09_2024.t_vit_vogner_project_sql_primary_final AS zdroj 
             WHERE zdroj.datovy_typ = 'Pruměrná cena za jednotku'
