@@ -1,0 +1,6 @@
+|rok  |nazev_potraviny            |prumerna_cena_potraviny|prumerny_plat     |mnozstvi_potraviny_za_prumerny_plat|
+|-----|---------------------------|-----------------------|------------------|-----------------------------------|
+|2,006|Chléb konzumní kmínový     |16.12 Kč/kg            |20,342.38 Kč/měsíc|1,261.93 kg                        |
+|2,006|Mléko polotučné pasterované|14.44 Kč/l             |20,342.38 Kč/měsíc|1,408.75 l                         |
+|2,018|Chléb konzumní kmínový     |24.24 Kč/kg            |31,980.26 Kč/měsíc|1,319.32 kg                        |
+|2,018|Mléko polotučné pasterované|19.82 Kč/l             |31,980.26 Kč/měsíc|1,613.53 l                         |

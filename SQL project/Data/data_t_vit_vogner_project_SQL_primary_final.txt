@@ -1,0 +1,591 @@
+|rok  |kod|nazev                                                       |datovy_typ                        |prumerna_hodnota|jednotka|
+|-----|---|------------------------------------------------------------|----------------------------------|----------------|--------|
+|2,006|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|13,414          |Kč      |
+|2,006|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|17,550.75       |Kč      |
+|2,006|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|18,993.75       |Kč      |
+|2,006|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|34,942          |Kč      |
+|2,006|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|15,477.5        |Kč      |
+|2,006|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|14,955          |Kč      |
+|2,006|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|39,353.25       |Kč      |
+|2,006|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|23,105.75       |Kč      |
+|2,006|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|17,643.75       |Kč      |
+|2,006|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|24,017.5        |Kč      |
+|2,006|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|11,105.75       |Kč      |
+|2,006|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|17,507.25       |Kč      |
+|2,006|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|22,852.75       |Kč      |
+|2,006|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|28,477          |Kč      |
+|2,006|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|18,197.25       |Kč      |
+|2,006|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|18,240.75       |Kč      |
+|2,006|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|17,973.5        |Kč      |
+|2,006|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|14,421          |Kč      |
+|2,006|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|18,276.75       |Kč      |
+|2,007|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|14,117          |Kč      |
+|2,007|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|18,994.5        |Kč      |
+|2,007|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|20,394          |Kč      |
+|2,007|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|37,204          |Kč      |
+|2,007|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|16,473          |Kč      |
+|2,007|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|15,929.25       |Kč      |
+|2,007|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|40,725.25       |Kč      |
+|2,007|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|25,317          |Kč      |
+|2,007|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|18,831.25       |Kč      |
+|2,007|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|25,675.75       |Kč      |
+|2,007|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|11,738.5        |Kč      |
+|2,007|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|19,037.5        |Kč      |
+|2,007|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|24,590.25       |Kč      |
+|2,007|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|30,679.25       |Kč      |
+|2,007|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|19,321          |Kč      |
+|2,007|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|19,292          |Kč      |
+|2,007|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|19,053.5        |Kč      |
+|2,007|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|15,761.25       |Kč      |
+|2,007|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|19,633.25       |Kč      |
+|2,008|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|14,451.25       |Kč      |
+|2,008|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|19,656.25       |Kč      |
+|2,008|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|22,008          |Kč      |
+|2,008|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|40,861.5        |Kč      |
+|2,008|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|17,384.25       |Kč      |
+|2,008|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|16,491.25       |Kč      |
+|2,008|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|43,974.75       |Kč      |
+|2,008|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|28,658.5        |Kč      |
+|2,008|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|20,692.5        |Kč      |
+|2,008|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|29,236          |Kč      |
+|2,008|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|11,937.5        |Kč      |
+|2,008|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|20,597.25       |Kč      |
+|2,008|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|25,759          |Kč      |
+|2,008|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|34,779.75       |Kč      |
+|2,008|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|20,097.5        |Kč      |
+|2,008|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|20,985.25       |Kč      |
+|2,008|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|20,036.75       |Kč      |
+|2,008|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|17,292.5        |Kč      |
+|2,008|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|21,128.5        |Kč      |
+|2,009|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|15,041          |Kč      |
+|2,009|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|19,919.25       |Kč      |
+|2,009|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|22,688.75       |Kč      |
+|2,009|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|42,237.75       |Kč      |
+|2,009|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|18,325.5        |Kč      |
+|2,009|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|16,781.75       |Kč      |
+|2,009|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|44,708.5        |Kč      |
+|2,009|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|30,284          |Kč      |
+|2,009|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|21,813          |Kč      |
+|2,009|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|27,960.5        |Kč      |
+|2,009|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|11,782.75       |Kč      |
+|2,009|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|20,577          |Kč      |
+|2,009|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|26,555.25       |Kč      |
+|2,009|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|38,206.75       |Kč      |
+|2,009|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|21,360.75       |Kč      |
+|2,009|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|21,637.5        |Kč      |
+|2,009|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|21,627          |Kč      |
+|2,009|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|17,193          |Kč      |
+|2,009|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|21,825.25       |Kč      |
+|2,010|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|15,222          |Kč      |
+|2,010|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|20,264.75       |Kč      |
+|2,010|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|22,740.25       |Kč      |
+|2,010|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|42,807.25       |Kč      |
+|2,010|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|18,610.5        |Kč      |
+|2,010|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|16,803.75       |Kč      |
+|2,010|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|45,339.5        |Kč      |
+|2,010|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|30,094.75       |Kč      |
+|2,010|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|21,961.75       |Kč      |
+|2,010|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|30,203.5        |Kč      |
+|2,010|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|12,644.5        |Kč      |
+|2,010|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|21,210.5        |Kč      |
+|2,010|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|26,470.5        |Kč      |
+|2,010|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|38,840          |Kč      |
+|2,010|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|20,928          |Kč      |
+|2,010|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|22,594          |Kč      |
+|2,010|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|22,286.25       |Kč      |
+|2,010|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|18,019.5        |Kč      |
+|2,010|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|22,680.5        |Kč      |
+|2,011|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|15,509.25       |Kč      |
+|2,011|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|21,083.5        |Kč      |
+|2,011|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|22,756.25       |Kč      |
+|2,011|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|44,265.25       |Kč      |
+|2,011|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|18,562          |Kč      |
+|2,011|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|17,610.75       |Kč      |
+|2,011|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|46,568.5        |Kč      |
+|2,011|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|30,475.5        |Kč      |
+|2,011|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|22,494.25       |Kč      |
+|2,011|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|31,445.75       |Kč      |
+|2,011|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|12,431.25       |Kč      |
+|2,011|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|21,863.5        |Kč      |
+|2,011|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|25,887.25       |Kč      |
+|2,011|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|39,844.75       |Kč      |
+|2,011|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|21,502.25       |Kč      |
+|2,011|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|22,752.5        |Kč      |
+|2,011|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|23,176.25       |Kč      |
+|2,011|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|18,674          |Kč      |
+|2,011|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|23,500.5        |Kč      |
+|2,012|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|15,935          |Kč      |
+|2,012|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|21,438.5        |Kč      |
+|2,012|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|22,998.5        |Kč      |
+|2,012|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|45,689.5        |Kč      |
+|2,012|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|19,550.5        |Kč      |
+|2,012|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|17,853          |Kč      |
+|2,012|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|49,706.5        |Kč      |
+|2,012|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|31,141.25       |Kč      |
+|2,012|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|22,571.75       |Kč      |
+|2,012|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|32,487          |Kč      |
+|2,012|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|12,705.75       |Kč      |
+|2,012|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|22,441          |Kč      |
+|2,012|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|26,285.25       |Kč      |
+|2,012|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|42,107.25       |Kč      |
+|2,012|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|21,912.5        |Kč      |
+|2,012|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|23,261.75       |Kč      |
+|2,012|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|23,621.5        |Kč      |
+|2,012|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|19,537          |Kč      |
+|2,012|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|24,221.75       |Kč      |
+|2,013|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|16,026          |Kč      |
+|2,013|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|21,094          |Kč      |
+|2,013|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|23,127          |Kč      |
+|2,013|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|45,240          |Kč      |
+|2,013|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|19,293          |Kč      |
+|2,013|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|17,901.5        |Kč      |
+|2,013|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|45,233.5        |Kč      |
+|2,013|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|30,274.25       |Kč      |
+|2,013|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|22,073.75       |Kč      |
+|2,013|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|31,685.75       |Kč      |
+|2,013|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|13,115          |Kč      |
+|2,013|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|22,203.75       |Kč      |
+|2,013|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|26,293.5        |Kč      |
+|2,013|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|40,299.75       |Kč      |
+|2,013|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|22,279.75       |Kč      |
+|2,013|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|23,184.25       |Kč      |
+|2,013|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|23,652          |Kč      |
+|2,013|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|20,207          |Kč      |
+|2,013|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|24,562.25       |Kč      |
+|2,014|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|16,191          |Kč      |
+|2,014|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|21,811.75       |Kč      |
+|2,014|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|23,600          |Kč      |
+|2,014|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|46,875          |Kč      |
+|2,014|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|20,118.75       |Kč      |
+|2,014|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|18,036.5        |Kč      |
+|2,014|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|46,999.5        |Kč      |
+|2,014|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|31,093.75       |Kč      |
+|2,014|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|22,605          |Kč      |
+|2,014|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|31,370.25       |Kč      |
+|2,014|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|13,429          |Kč      |
+|2,014|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|22,906.75       |Kč      |
+|2,014|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|27,104.75       |Kč      |
+|2,014|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|40,951.25       |Kč      |
+|2,014|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|22,692.5        |Kč      |
+|2,014|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|23,845.75       |Kč      |
+|2,014|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|24,255.75       |Kč      |
+|2,014|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|20,952          |Kč      |
+|2,014|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|25,308.25       |Kč      |
+|2,015|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|16,559.5        |Kč      |
+|2,015|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|22,569          |Kč      |
+|2,015|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|24,369.5        |Kč      |
+|2,015|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|47,833          |Kč      |
+|2,015|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|20,850.5        |Kč      |
+|2,015|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|18,601          |Kč      |
+|2,015|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|47,077.25       |Kč      |
+|2,015|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|32,029          |Kč      |
+|2,015|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|23,586.25       |Kč      |
+|2,015|   |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|31,539.5        |Kč      |
+|2,015|   |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|14,198          |Kč      |
+|2,015|   |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|23,912.75       |Kč      |
+|2,015|   |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|28,409.25       |Kč      |
+|2,015|   |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|40,514.5        |Kč      |
+|2,015|   |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|23,102.75       |Kč      |
+|2,015|   |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|24,367          |Kč      |
+|2,015|   |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|25,352          |Kč      |
+|2,015|   |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|21,232.25       |Kč      |
+|2,015|   |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|26,131.75       |Kč      |
+|2,016|   |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|17,537          |Kč      |
+|2,016|   |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|23,635.5        |Kč      |
+|2,016|   |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|25,505.75       |Kč      |
+|2,016|   |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|49,160.75       |Kč      |
+|2,016|   |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|22,202          |Kč      |
+|2,016|   |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|19,149.75       |Kč      |
+|2,016|   |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|48,683          |Kč      |
+|2,016|   |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|33,141.75       |Kč      |
+|2,016|   |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|24,551.25       |Kč      |
+|2,016|         |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|31,348          |Kč      |
+|2,016|         |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|15,042.25       |Kč      |
+|2,016|         |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|25,070.25       |Kč      |
+|2,016|         |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|30,007.5        |Kč      |
+|2,016|         |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|40,955.5        |Kč      |
+|2,016|         |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|23,938.5        |Kč      |
+|2,016|         |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|25,007.75       |Kč      |
+|2,016|         |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|26,577.5        |Kč      |
+|2,016|         |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|22,240          |Kč      |
+|2,016|         |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|27,237.5        |Kč      |
+|2,017|         |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|18,861          |Kč      |
+|2,017|         |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|25,194.75       |Kč      |
+|2,017|         |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|27,152.25       |Kč      |
+|2,017|         |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|51,640.75       |Kč      |
+|2,017|         |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|24,199.25       |Kč      |
+|2,017|         |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|20,017.5        |Kč      |
+|2,017|         |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|50,524.25       |Kč      |
+|2,017|         |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|35,010.75       |Kč      |
+|2,017|         |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|25,703          |Kč      |
+|2,017|         |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|33,462.25       |Kč      |
+|2,017|         |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|16,889          |Kč      |
+|2,017|         |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|26,957.5        |Kč      |
+|2,017|         |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|32,442.25       |Kč      |
+|2,017|         |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|43,218.75       |Kč      |
+|2,017|         |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|25,358.5        |Kč      |
+|2,017|         |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|26,575.75       |Kč      |
+|2,017|         |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|28,920          |Kč      |
+|2,017|         |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|23,531.25       |Kč      |
+|2,017|         |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|29,321          |Kč      |
+|2,018|         |Administrativní a podpůrné činnosti                         |Průměrná hrubá mzda na zaměstnance|20,165.5        |Kč      |
+|2,018|         |Činnosti v oblasti nemovitostí                              |Průměrná hrubá mzda na zaměstnance|27,059.5        |Kč      |
+|2,018|         |Doprava a skladování                                        |Průměrná hrubá mzda na zaměstnance|29,135.75       |Kč      |
+|2,018|         |Informační a komunikační činnosti                           |Průměrná hrubá mzda na zaměstnance|55,474.75       |Kč      |
+|2,018|         |Kulturní, zábavní a rekreační činnosti                      |Průměrná hrubá mzda na zaměstnance|26,761.75       |Kč      |
+|2,018|         |Ostatní činnosti                                            |Průměrná hrubá mzda na zaměstnance|21,249.5        |Kč      |
+|2,018|         |Peněžnictví a pojišťovnictví                                |Průměrná hrubá mzda na zaměstnance|53,339.5        |Kč      |
+|2,018|         |Profesní, vědecké a technické činnosti                      |Průměrná hrubá mzda na zaměstnance|37,162.75       |Kč      |
+|2,018|         |Stavebnictví                                                |Průměrná hrubá mzda na zaměstnance|27,821.75       |Kč      |
+|2,018|         |Těžba a dobývání                                            |Průměrná hrubá mzda na zaměstnance|35,942.75       |Kč      |
+|2,018|         |Ubytování, stravování a pohostinství                        |Průměrná hrubá mzda na zaměstnance|18,270.25       |Kč      |
+|2,018|         |Velkoobchod a maloobchod; opravy a údržba motorových vozidel|Průměrná hrubá mzda na zaměstnance|28,833.75       |Kč      |
+|2,018|         |Veřejná správa a obrana; povinné sociální zabezpečení       |Průměrná hrubá mzda na zaměstnance|35,714.5        |Kč      |
+|2,018|         |Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu |Průměrná hrubá mzda na zaměstnance|45,982.5        |Kč      |
+|2,018|         |Vzdělávání                                                  |Průměrná hrubá mzda na zaměstnance|28,047.5        |Kč      |
+|2,018|         |Zásobování vodou; činnosti související s odpady a sanacemi  |Průměrná hrubá mzda na zaměstnance|28,272          |Kč      |
+|2,018|         |Zdravotní a sociální péče                                   |Průměrná hrubá mzda na zaměstnance|31,629.5        |Kč      |
+|2,018|         |Zemědělství, lesnictví, rybářství                           |Průměrná hrubá mzda na zaměstnance|25,115.25       |Kč      |
+|2,018|         |Zpracovatelský průmysl                                      |Průměrná hrubá mzda na zaměstnance|31,646.25       |Kč      |
+|2,006|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |27.3            |kg      |
+|2,006|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |21.73           |kg      |
+|2,006|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |110.95          |kg      |
+|2,006|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |166.34          |kg      |
+|2,006|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |16.12           |kg      |
+|2,006|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |30.71           |kg      |
+|2,006|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |5.83            |g       |
+|2,006|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |69.35           |kg      |
+|2,006|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |12.07           |kg      |
+|2,006|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |47.47           |kg      |
+|2,006|115,101  |Máslo                                                       |Průměrná cena za jednotku         |104.39          |kg      |
+|2,006|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |14.44           |l       |
+|2,006|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |14.41           |kg      |
+|2,006|117,103  |Papriky                                                     |Průměrná cena za jednotku         |35.31           |kg      |
+|2,006|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |38.6            |kg      |
+|2,006|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |8.45            |l       |
+|2,006|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |24.73           |kg      |
+|2,006|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |7.69            |l       |
+|2,006|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |7.41            |kg      |
+|2,006|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |57.83           |kg      |
+|2,006|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |69.45           |kg      |
+|2,006|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |21.29           |kg      |
+|2,006|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |116.77          |kg      |
+|2,006|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |26.1            |kg      |
+|2,006|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |23.49           |ks      |
+|2,006|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |105.18          |kg      |
+|2,007|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |30.85           |kg      |
+|2,007|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |21.92           |kg      |
+|2,007|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |122.68          |kg      |
+|2,007|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |169.46          |kg      |
+|2,007|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |18.85           |kg      |
+|2,007|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |28.49           |kg      |
+|2,007|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |5.88            |g       |
+|2,007|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |78.97           |kg      |
+|2,007|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |14.1            |kg      |
+|2,007|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |53.61           |kg      |
+|2,007|115,101  |Máslo                                                       |Průměrná cena za jednotku         |115.78          |kg      |
+|2,007|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |15.59           |l       |
+|2,007|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |14.18           |kg      |
+|2,007|117,103  |Papriky                                                     |Průměrná cena za jednotku         |68.79           |kg      |
+|2,007|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |44.04           |kg      |
+|2,007|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |8.51            |l       |
+|2,007|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |30.23           |kg      |
+|2,007|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |7.73            |l       |
+|2,007|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |9.08            |kg      |
+|2,007|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |40.32           |kg      |
+|2,007|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |69.5            |kg      |
+|2,007|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |23.86           |kg      |
+|2,007|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |116.44          |kg      |
+|2,007|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |26.71           |kg      |
+|2,007|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |24.97           |ks      |
+|2,007|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |102.9           |kg      |
+|2,008|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |30.59           |kg      |
+|2,008|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |21.1            |kg      |
+|2,008|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |135.28          |kg      |
+|2,008|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |175.55          |kg      |
+|2,008|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |22.88           |kg      |
+|2,008|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |33.19           |kg      |
+|2,008|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |6.28            |g       |
+|2,008|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |80.44           |kg      |
+|2,008|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |10.78           |kg      |
+|2,008|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |60.86           |kg      |
+|2,008|115,101  |Máslo                                                       |Průměrná cena za jednotku         |114.74          |kg      |
+|2,008|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |17.93           |l       |
+|2,008|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |16.88           |kg      |
+|2,008|117,103  |Papriky                                                     |Průměrná cena za jednotku         |62.3            |kg      |
+|2,008|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |54.31           |kg      |
+|2,008|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |8.97            |l       |
+|2,008|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |31.29           |kg      |
+|2,008|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.27            |l       |
+|2,008|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |12.98           |kg      |
+|2,008|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |35.58           |kg      |
+|2,008|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |84.4            |kg      |
+|2,008|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |32.69           |kg      |
+|2,008|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |118.98          |kg      |
+|2,008|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |30.76           |kg      |
+|2,008|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |28.12           |ks      |
+|2,008|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |106.46          |kg      |
+|2,009|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |30.56           |kg      |
+|2,009|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |19.81           |kg      |
+|2,009|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |111.67          |kg      |
+|2,009|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |179.01          |kg      |
+|2,009|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |19.58           |kg      |
+|2,009|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |25.85           |kg      |
+|2,009|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |6.08            |g       |
+|2,009|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |82              |kg      |
+|2,009|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |10.22           |kg      |
+|2,009|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |57.86           |kg      |
+|2,009|115,101  |Máslo                                                       |Průměrná cena za jednotku         |96.09           |kg      |
+|2,009|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |15.66           |l       |
+|2,009|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |16.56           |kg      |
+|2,009|117,103  |Papriky                                                     |Průměrná cena za jednotku         |51.7            |kg      |
+|2,009|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |38.83           |kg      |
+|2,009|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |9.18            |l       |
+|2,009|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |29.79           |kg      |
+|2,009|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.21            |l       |
+|2,009|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |9.97            |kg      |
+|2,009|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |34.92           |kg      |
+|2,009|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |84.41           |kg      |
+|2,009|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |36.1            |kg      |
+|2,009|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |117.99          |kg      |
+|2,009|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |30.98           |kg      |
+|2,009|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |26.02           |ks      |
+|2,009|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |106.48          |kg      |
+|2,010|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |27.44           |kg      |
+|2,010|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |18.27           |kg      |
+|2,010|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |119.95          |kg      |
+|2,010|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |176.15          |kg      |
+|2,010|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |18.39           |kg      |
+|2,010|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |25.28           |kg      |
+|2,010|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |6.26            |g       |
+|2,010|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |84.38           |kg      |
+|2,010|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |13.27           |kg      |
+|2,010|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |56.9            |kg      |
+|2,010|115,101  |Máslo                                                       |Průměrná cena za jednotku         |118.39          |kg      |
+|2,010|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |16.03           |l       |
+|2,010|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |15.79           |kg      |
+|2,010|117,103  |Papriky                                                     |Průměrná cena za jednotku         |61.5            |kg      |
+|2,010|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |33.54           |kg      |
+|2,010|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |9.89            |l       |
+|2,010|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |30.62           |kg      |
+|2,010|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.03            |l       |
+|2,010|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |8.77            |kg      |
+|2,010|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |42.21           |kg      |
+|2,010|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |80.42           |kg      |
+|2,010|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |33.93           |kg      |
+|2,010|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |116.98          |kg      |
+|2,010|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |31.94           |kg      |
+|2,010|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |25.15           |ks      |
+|2,010|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |100.48          |kg      |
+|2,011|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |26.97           |kg      |
+|2,011|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |22.45           |kg      |
+|2,011|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |122.38          |kg      |
+|2,011|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |180.73          |kg      |
+|2,011|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |21.63           |kg      |
+|2,011|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |29.17           |kg      |
+|2,011|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |6.51            |g       |
+|2,011|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |86.85           |kg      |
+|2,011|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |13.53           |kg      |
+|2,011|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |58.3            |kg      |
+|2,011|115,101  |Máslo                                                       |Průměrná cena za jednotku         |139.19          |kg      |
+|2,011|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |17.65           |l       |
+|2,011|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |16.44           |kg      |
+|2,011|117,103  |Papriky                                                     |Průměrná cena za jednotku         |53.29           |kg      |
+|2,011|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |43.25           |kg      |
+|2,011|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |10.05           |l       |
+|2,011|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |28.06           |kg      |
+|2,011|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.29            |l       |
+|2,011|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |11.44           |kg      |
+|2,011|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |30.31           |kg      |
+|2,011|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |88.72           |kg      |
+|2,011|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |33.34           |kg      |
+|2,011|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |115.91          |kg      |
+|2,011|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |35.14           |kg      |
+|2,011|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |23.21           |ks      |
+|2,011|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |100.04          |kg      |
+|2,012|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |31              |kg      |
+|2,012|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |24.27           |kg      |
+|2,012|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |128.08          |kg      |
+|2,012|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |200.81          |kg      |
+|2,012|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |22.91           |kg      |
+|2,012|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |31              |kg      |
+|2,012|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |7.16            |g       |
+|2,012|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |90.09           |kg      |
+|2,012|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |10.56           |kg      |
+|2,012|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |62.9            |kg      |
+|2,012|115,101  |Máslo                                                       |Průměrná cena za jednotku         |137.03          |kg      |
+|2,012|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |18.8            |l       |
+|2,012|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |17.44           |kg      |
+|2,012|117,103  |Papriky                                                     |Průměrná cena za jednotku         |58.83           |kg      |
+|2,012|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |43.67           |kg      |
+|2,012|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |10.16           |l       |
+|2,012|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |30.19           |kg      |
+|2,012|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.89            |l       |
+|2,012|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |11.53           |kg      |
+|2,012|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |37.85           |kg      |
+|2,012|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |90.02           |kg      |
+|2,012|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |34.04           |kg      |
+|2,012|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |121.75          |kg      |
+|2,012|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |37.55           |kg      |
+|2,012|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |35.92           |ks      |
+|2,012|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |109.42          |kg      |
+|2,013|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |31.79           |kg      |
+|2,013|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |24.16           |kg      |
+|2,013|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |141.97          |kg      |
+|2,013|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |207.19          |kg      |
+|2,013|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |23.12           |kg      |
+|2,013|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |34.3            |kg      |
+|2,013|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |7.7             |g       |
+|2,013|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |88.09           |kg      |
+|2,013|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |16.93           |kg      |
+|2,013|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |69.3            |kg      |
+|2,013|115,101  |Máslo                                                       |Průměrná cena za jednotku         |154.8           |kg      |
+|2,013|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |19.34           |l       |
+|2,013|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |18.59           |kg      |
+|2,013|117,103  |Papriky                                                     |Průměrná cena za jednotku         |61.86           |kg      |
+|2,013|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |41.98           |kg      |
+|2,013|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |10.55           |l       |
+|2,013|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |31.37           |kg      |
+|2,013|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.74            |l       |
+|2,013|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |13.34           |kg      |
+|2,013|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |37.1            |kg      |
+|2,013|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |93.3            |kg      |
+|2,013|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |34.73           |kg      |
+|2,013|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |126.24          |kg      |
+|2,013|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |41              |kg      |
+|2,013|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |30.48           |ks      |
+|2,013|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |115.87          |kg      |
+|2,014|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |31.65           |kg      |
+|2,014|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |22.03           |kg      |
+|2,014|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |150.61          |kg      |
+|2,014|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |204.95          |kg      |
+|2,014|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |23              |kg      |
+|2,014|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |30.52           |kg      |
+|2,014|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |8.5             |g       |
+|2,014|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |86.37           |kg      |
+|2,014|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |13.52           |kg      |
+|2,014|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |71.77           |kg      |
+|2,014|115,101  |Máslo                                                       |Průměrná cena za jednotku         |162.97          |kg      |
+|2,014|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |20.7            |l       |
+|2,014|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |16.22           |kg      |
+|2,014|117,103  |Papriky                                                     |Průměrná cena za jednotku         |60.55           |kg      |
+|2,014|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |40.54           |kg      |
+|2,014|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |10.63           |l       |
+|2,014|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |29.68           |kg      |
+|2,014|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.69            |l       |
+|2,014|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |13.12           |kg      |
+|2,014|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |41.16           |kg      |
+|2,014|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |93.05           |kg      |
+|2,014|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |35.31           |kg      |
+|2,014|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |129.43          |kg      |
+|2,014|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |42.54           |kg      |
+|2,014|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |30.93           |ks      |
+|2,014|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |116.37          |kg      |
+|2,015|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |31.91           |kg      |
+|2,015|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |17.8            |kg      |
+|2,015|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |119.39          |kg      |
+|2,015|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |203.09          |kg      |
+|2,015|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |22.44           |kg      |
+|2,015|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |29.87           |kg      |
+|2,015|212,101  |Jakostní víno bílé                                          |Průměrná cena za jednotku         |92.42           |l       |
+|2,015|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |8.52            |g       |
+|2,015|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |87.17           |kg      |
+|2,015|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |13.34           |kg      |
+|2,015|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |69.58           |kg      |
+|2,015|115,101  |Máslo                                                       |Průměrná cena za jednotku         |157.04          |kg      |
+|2,015|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |19.54           |l       |
+|2,015|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |20.84           |kg      |
+|2,015|117,103  |Papriky                                                     |Průměrná cena za jednotku         |63.52           |kg      |
+|2,015|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |39.46           |kg      |
+|2,015|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |10.68           |l       |
+|2,015|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |32.5            |kg      |
+|2,015|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.71            |l       |
+|2,015|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |12.59           |kg      |
+|2,015|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |42.77           |kg      |
+|2,015|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |91.54           |kg      |
+|2,015|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |35.93           |kg      |
+|2,015|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |128.86          |kg      |
+|2,015|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |44.42           |kg      |
+|2,015|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |31.15           |ks      |
+|2,015|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |108.66          |kg      |
+|2,016|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |31.72           |kg      |
+|2,016|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |17.59           |kg      |
+|2,016|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |110.9           |kg      |
+|2,016|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |206.02          |kg      |
+|2,016|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |21.77           |kg      |
+|2,016|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |29.94           |kg      |
+|2,016|212,101  |Jakostní víno bílé                                          |Průměrná cena za jednotku         |94.65           |l       |
+|2,016|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |8.12            |g       |
+|2,016|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |85.07           |kg      |
+|2,016|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |15.22           |kg      |
+|2,016|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |68.97           |kg      |
+|2,016|115,101  |Máslo                                                       |Průměrná cena za jednotku         |148.34          |kg      |
+|2,016|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |17.9            |l       |
+|2,016|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |18.55           |kg      |
+|2,016|117,103  |Papriky                                                     |Průměrná cena za jednotku         |64.55           |kg      |
+|2,016|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |40.84           |kg      |
+|2,016|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |11.23           |l       |
+|2,016|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |32.6            |kg      |
+|2,016|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.66            |l       |
+|2,016|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |11.03           |kg      |
+|2,016|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |40.57           |kg      |
+|2,016|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |91.44           |kg      |
+|2,016|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |36.52           |kg      |
+|2,016|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |130.21          |kg      |
+|2,016|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |44.82           |kg      |
+|2,016|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |28.65           |ks      |
+|2,016|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |109.46          |kg      |
+|2,017|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |31.07           |kg      |
+|2,017|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |19.96           |kg      |
+|2,017|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |142.58          |kg      |
+|2,017|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |218.27          |kg      |
+|2,017|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |24.17           |kg      |
+|2,017|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |32.63           |kg      |
+|2,017|212,101  |Jakostní víno bílé                                          |Průměrná cena za jednotku         |96.7            |l       |
+|2,017|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |8.73            |g       |
+|2,017|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |87.72           |kg      |
+|2,017|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |15.93           |kg      |
+|2,017|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |68.18           |kg      |
+|2,017|115,101  |Máslo                                                       |Průměrná cena za jednotku         |197.79          |kg      |
+|2,017|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |19.5            |l       |
+|2,017|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |15.03           |kg      |
+|2,017|117,103  |Papriky                                                     |Průměrná cena za jednotku         |62.4            |kg      |
+|2,017|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |45.23           |kg      |
+|2,017|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |11.3            |l       |
+|2,017|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |36.32           |kg      |
+|2,017|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.78            |l       |
+|2,017|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |11.43           |kg      |
+|2,017|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |44.7            |kg      |
+|2,017|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |94.29           |kg      |
+|2,017|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |36.3            |kg      |
+|2,017|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |142.03          |kg      |
+|2,017|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |46.55           |kg      |
+|2,017|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |36.34           |ks      |
+|2,017|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |118.27          |kg      |
+|2,018|116,103  |Banány žluté                                                |Průměrná cena za jednotku         |29.32           |kg      |
+|2,018|118,101  |Cukr krystalový                                             |Průměrná cena za jednotku         |15.75           |kg      |
+|2,018|114,501  |Eidamská cihla                                              |Průměrná cena za jednotku         |142.45          |kg      |
+|2,018|112,101  |Hovězí maso zadní bez kosti                                 |Průměrná cena za jednotku         |223.26          |kg      |
+|2,018|111,301  |Chléb konzumní kmínový                                      |Průměrná cena za jednotku         |24.24           |kg      |
+|2,018|116,104  |Jablka konzumní                                             |Průměrná cena za jednotku         |36.17           |kg      |
+|2,018|212,101  |Jakostní víno bílé                                          |Průměrná cena za jednotku         |100.1           |l       |
+|2,018|114,401  |Jogurt bílý netučný                                         |Průměrná cena za jednotku         |9.17            |g       |
+|2,018|2,000,001|Kapr živý                                                   |Průměrná cena za jednotku         |93.46           |kg      |
+|2,018|117,401  |Konzumní brambory                                           |Průměrná cena za jednotku         |15.08           |kg      |
+|2,018|112,401  |Kuřata kuchaná celá                                         |Průměrná cena za jednotku         |69.31           |kg      |
+|2,018|115,101  |Máslo                                                       |Průměrná cena za jednotku         |207.08          |kg      |
+|2,018|114,201  |Mléko polotučné pasterované                                 |Průměrná cena za jednotku         |19.82           |l       |
+|2,018|117,106  |Mrkev                                                       |Průměrná cena za jednotku         |22.45           |kg      |
+|2,018|117,103  |Papriky                                                     |Průměrná cena za jednotku         |60.47           |kg      |
+|2,018|111,303  |Pečivo pšeničné bílé                                        |Průměrná cena za jednotku         |43.84           |kg      |
+|2,018|213,201  |Pivo výčepní, světlé, lahvové                               |Průměrná cena za jednotku         |11.81           |l       |
+|2,018|116,101  |Pomeranče                                                   |Průměrná cena za jednotku         |36.5            |kg      |
+|2,018|122,102  |Přírodní minerální voda uhličitá                            |Průměrná cena za jednotku         |8.64            |l       |
+|2,018|111,201  |Pšeničná mouka hladká                                       |Průměrná cena za jednotku         |11.44           |kg      |
+|2,018|117,101  |Rajská jablka červená kulatá                                |Průměrná cena za jednotku         |44.49           |kg      |
+|2,018|115,201  |Rostlinný roztíratelný tuk                                  |Průměrná cena za jednotku         |99.4            |kg      |
+|2,018|111,101  |Rýže loupaná dlouhozrnná                                    |Průměrná cena za jednotku         |36.18           |kg      |
+|2,018|112,704  |Šunkový salám                                               |Průměrná cena za jednotku         |144.88          |kg      |
+|2,018|111,602  |Těstoviny vaječné                                           |Průměrná cena za jednotku         |47.87           |kg      |
+|2,018|114,701  |Vejce slepičí čerstvá                                       |Průměrná cena za jednotku         |38.39           |ks      |
+|2,018|112,201  |Vepřová pečeně s kostí                                      |Průměrná cena za jednotku         |116.85          |kg      |
