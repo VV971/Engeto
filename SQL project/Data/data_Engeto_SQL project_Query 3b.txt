@@ -1,0 +1,29 @@
+|nazev_potraviny                 |prumerna_mezirocni_zmena_ceny_potraviny_procentne|poradi|
+|--------------------------------|-------------------------------------------------|------|
+|Cukr krystalový                 |11.7696 %                                        |1     |
+|Rajská jablka červená kulatá    |11.9111 %                                        |2     |
+|Banány žluté                    |12.0974 %                                        |3     |
+|Vepřová pečeně s kostí          |12.1190 %                                        |4     |
+|Přírodní minerální voda uhličitá|12.1225 %                                        |5     |
+|Šunkový salám                   |12.2224 %                                        |6     |
+|Jablka konzumní                 |12.2417 %                                        |7     |
+|Pečivo pšeničné bílé            |12.2642 %                                        |8     |
+|Hovězí maso zadní bez kosti     |12.3042 %                                        |9     |
+|Kapr živý                       |12.3124 %                                        |10    |
+|Pivo výčepní, světlé, lahvové   |12.3426 %                                        |11    |
+|Eidamská cihla                  |12.3505 %                                        |12    |
+|Mléko polotučné pasterované     |12.3578 %                                        |13    |
+|Rostlinný roztíratelný tuk      |12.3876 %                                        |14    |
+|Kuřata kuchaná celá             |12.4054 %                                        |15    |
+|Pomeranče                       |12.4321 %                                        |16    |
+|Jogurt bílý netučný             |12.4744 %                                        |17    |
+|Chléb konzumní kmínový          |12.4764 %                                        |18    |
+|Konzumní brambory               |12.5020 %                                        |19    |
+|Rýže loupaná dlouhozrnná        |12.6002 %                                        |20    |
+|Pšeničná mouka hladká           |12.6283 %                                        |21    |
+|Mrkev                           |12.6283 %                                        |21    |
+|Těstoviny vaječné               |12.6315 %                                        |22    |
+|Vejce slepičí čerstvá           |12.6665 %                                        |23    |
+|Máslo                           |12.8008 %                                        |24    |
+|Papriky                         |12.8751 %                                        |25    |
+|Jakostní víno bílé              |3.0809 %                                         |26    |

@@ -55,27 +55,16 @@ WITH cte_vyvoj_HDP AS (
             AND zdroj.rok BETWEEN 2006 AND 2018
             GROUP BY zdroj.rok, zdroj.nazev
     )
-SELECT 
+SELECT
     cte_hdp.region,
     cte_hdp.stat,
     cte_hdp.zkratka_meny,
     cte_hdp.rok,
-    CONCAT(FORMAT(cte_hdp.HDP, 2), ',- Kč') AS HDP,
-    CONCAT(FORMAT(cte_hdp.HDP_predchozi_rok, 2), ',- Kč') AS HDP_predchozi_rok,
-    CONCAT(FORMAT(cte_hdp.mezirocni_zmena_HDP_abs,  2), ',- Kč') AS mezirocni_zmena_HDP_abs,
     CONCAT(FORMAT(cte_hdp.mezirocni_zmena_HDP_procentni,  2), ' %') AS mezirocni_zmena_HDP_procentni,
     cte_hdp.trend_HDP,
-    cte_plat.odvetvi,
-    CONCAT(FORMAT(cte_plat.prumerny_plat, 2), ',- Kč') AS prumerny_plat,
-    CONCAT(FORMAT(cte_plat.prumerny_plat_predchozi_rok, 2), ',- Kč') AS prumerny_plat_predchozi_rok,
-    CONCAT(FORMAT(cte_plat.mezirocni_zmena_platu_abs, 2), ',- Kč') AS mezirocni_zmena_platu_abs,
-    CONCAT(FORMAT(cte_plat.mezirocni_zmena_platu_procentne, 2), ' %') AS mezirocni_zmena_platu_procentne,
+    CONCAT(FORMAT(AVG(cte_plat.mezirocni_zmena_platu_procentne), 2), ' %') AS mezirocni_zmena_platu_procentne,
     cte_plat.trend_platu,
-    cte_potr.potravina,
-    CONCAT(FORMAT(cte_potr.prumerna_cena, 2), ',- Kč') AS prumerna_cena,
-    CONCAT(FORMAT(cte_potr.prumerna_cena_predchozi_rok, 2), ',- Kč') AS prumerna_cena_predchozi_rok,
-    CONCAT(FORMAT(cte_potr.mezirocni_zmena_cen_abs, 2), ',- Kč') AS mezirocni_zmena_cen_abs,
-    CONCAT(FORMAT(cte_potr.mezirocni_zmena_cen_procentne, 2), ' %') AS mezirocni_zmena_cen_procentne,
+    CONCAT(FORMAT(AVG(cte_potr.mezirocni_zmena_cen_procentne), 2), ' %') AS mezirocni_zmena_cen_procentne,
     cte_potr.trend_cen
 FROM cte_vyvoj_HDP AS cte_hdp
 JOIN cte_vyvoj_platu AS cte_plat
@@ -84,4 +73,9 @@ JOIN cte_vyvoj_cen_potravin AS cte_potr
 ON cte_hdp.rok = cte_potr.rok
 WHERE cte_hdp.trend_HDP = 'Změna HDP větší než 2,5%'
 AND cte_plat.trend_platu = 'Růst platů o 5 a více %'
-AND cte_potr.trend_cen = 'Růst cen potravin o 5 a více %';
+AND cte_potr.trend_cen = 'Růst cen potravin o 5 a více %'
+GROUP BY 
+    cte_hdp.region,
+    cte_hdp.stat,
+    cte_hdp.zkratka_meny,
+    cte_hdp.rok;

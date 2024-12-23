@@ -1,6 +1,6 @@
 -- 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
-/*Varianta č. 1 - řadím vzestupně a vybírám jen první hodnotu
+/*Varianta a) - řadím vzestupně a vybírám jen první hodnotu
 WITH cte_ceny_potravin AS (
     SELECT
         zdroj.rok,
@@ -22,7 +22,7 @@ ORDER BY
 LIMIT 1;
 */
 
--- Varianta č. 2 - s využitím window fce DENSE_RANK 
+-- Varianta b) - s využitím window fce DENSE_RANK 
 WITH cte_ceny_potravin AS (
     SELECT
         zdroj.rok,
