@@ -1,4 +1,5 @@
 -- 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
+
 /*Varianta č. 1 - řadím vzestupně a vybírám jen první hodnotu
 WITH cte_ceny_potravin AS (
     SELECT
