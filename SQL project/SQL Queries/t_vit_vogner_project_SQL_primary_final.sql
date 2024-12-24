@@ -4,6 +4,12 @@ Výstup projektu: dvě tabulky v databázi, ze kterých se požadovaná data daj
  data o dalších evropských státech).
 */
 
+/*
+Poznámka k výkonnosti - tento SQL dotaz jsem napsal tak, aby přesně odpovídal zadání, což se odrazilo na tom, že je prakticky nepoužitelný kvůli době výpočtu, která 
+pro lokální databázi činila cca 140 vteřin. V praxi bych dotaz upravil tak, že bych limity roků zadal buď napevno nebo bych je uložil do proměnných, které bych 
+potom použil v proceduře.
+*/
+
 CREATE TABLE IF NOT EXISTS t_vit_vogner_project_SQL_primary_final AS (
 WITH cte_platy AS (
     SELECT  
