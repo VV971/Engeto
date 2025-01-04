@@ -3,18 +3,19 @@
 • Datový typ: numeric 
 • Popis parametru: Kraj sídla zdravotnického zařízení primárně poskytujícího péči. 
 • Možné hodnoty: 
-o CZ010 - Hlavní město Praha 
-o CZ020 - Středočeský kraj 
-o CZ031 - Jihočeský kraj 
-o CZ032 - Plzeňský kraj 
-o CZ041 - Karlovarský kraj 
-o CZ042 - Ústecký kraj 
-o CZ051 - Liberecký kraj 
-o CZ052 - Královéhradecký kraj 
-o CZ053 - Pardubický kraj 
-o CZ063 - Kraj Vysočina 
-o CZ064 - Jihomoravský kraj 
-o CZ071 - Olomoucký kraj 
-o CZ072 - Zlínský kraj 
-o CZ080 - Moravskoslezský kraj 
-o CZ099 – Neznámý kraj 
+kod_kraje nazev_kraje
+CZ010 Hlavní město Praha
+CZ020 Středočeský kraj
+CZ031 Jihočeský kraj
+CZ032 Plzeňský kraj
+CZ041 Karlovarský kraj
+CZ042 Ústecký kraj
+CZ051 Liberecký kraj
+CZ052 Královéhradecký kraj
+CZ053 Pardubický kraj
+CZ063 Kraj Vysočina
+CZ064 Jihomoravský kraj
+CZ071 Olomoucký kraj
+CZ072 Zlínský kraj
+CZ080 Moravskoslezský kraj
+CZ099 Neznámý kraj

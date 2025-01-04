@@ -8,8 +8,7 @@ o V10-V19 Cyklista zraněný při dopravní nehodě
 o V20-V29 Jezdec na motocyklu zraněný při dopravní nehodě                                        
 o V30-V39 Člen osádky tříkolového motorového vozidla zraněný při dopravní nehodě                 
 o V40-V49 Člen osádky osobního automobilu zraněný při dopravní nehodě                            
-o V50-V59 Člen osádky dodávkového nebo lehkého nákladního automobilu zraněný při 
-dopravní nehodě 
+o V50-V59 Člen osádky dodávkového nebo lehkého nákladního automobilu zraněný při dopravní nehodě 
 o V60-V69 Člen osádky těžkého nákladního vozidla zraněný při dopravní nehodě                     
 o V70-V79 Člen osádky autobusu zraněný při dopravní nehodě                                       
 o V80-V89 Jiné nehody při pozemní dopravě                                                        
@@ -21,8 +20,7 @@ o W20-W49 Vystavení neživotným mechanickým silám
 o W50-W64 Vystavení životným mechanickým silám                                                   
 o W65-W74 Náhodné (u)tonutí a potopení                                                           
 o W75-W84 Jiná náhodná ohrožení dýchání                                                          
-o W85-W99 Vystavení elektrickému proudu, ozáření a extrémní okolní teplotě a tlaku 
-vzduchu       
+o W85-W99 Vystavení elektrickému proudu, ozáření a extrémní okolní teplotě a tlaku vzduchu       
 o X00-X09 Vystavení kouři, ohni, dýmu a plamenů                                                  
 o X10-X19 Kontakt s horkem a horkými látkami                                                     
 o X20-X29 Kontakt s jedovatými živočichy a rostlinami                                            

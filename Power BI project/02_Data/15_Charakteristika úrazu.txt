@@ -1,4 +1,4 @@
-kod_poraneni popis_poraneni
+kod_poraneni	popis_poraneni
 S00-S09	Poranění hlavy 0 Ne  
 S00-S09	Poranění hlavy 1 Ano
 S10-S19	Poranění krku 0 Ne  
@@ -39,8 +39,8 @@ T51-T65	Toxické účinky látek ze zdrojů převážně mimo lékařství 0 Ne
 T51-T65	Toxické účinky látek ze zdrojů převážně mimo lékařství 1 Ano
 T66-T78	Jiné a neurčené účinky vnějších příčin 0 Ne
 T66-T78	Jiné a neurčené účinky vnějších příčin 1 Ano
-T79-T79 Některé časné komplikace úrazů 0 Ne
-T79-T79 Některé časné komplikace úrazů 1 Ano
+T79-T79	Některé časné komplikace úrazů 0 Ne
+T79-T79	Některé časné komplikace úrazů 1 Ano
 T80-T88	Komplikace zdravotní péče nezařazené jinde 0 Ne
 T80-T88	Komplikace zdravotní péče nezařazené jinde 1 Ano
 T90-T98	Následky poranění‚ otravy a jiných následků vnějších příčin 0 Ne
