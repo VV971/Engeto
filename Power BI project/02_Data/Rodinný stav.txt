@@ -1,9 +1,0 @@
-Rodinný stav 
-Název parametru: rodinny_stav 
-Datový typ: numeric 
-Popis parametru: Rodinný stav matky. 
-Možné hodnoty: 
-1) Svobodná 
-2) Vdaná (vč. družky) 
-3) Rozvedená 
-4) Vdova 

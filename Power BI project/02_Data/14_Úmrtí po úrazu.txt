@@ -1,0 +1,9 @@
+14. Úmrtí po úrazu 
+• Název parametru: umrti 
+• Datový typ: string 
+• Popis parametru: Úmrtí v návaznosti na úraz. 
+• Možné hodnoty: 
+o Null - Bez úmrtí 
+o III-a - Úmrtí po léčbě ve vazbě na následky úrazu 
+o III-b - Úmrtí při léčbě/hospitalizaci 
+o III-c - Úmrtí bezprostředně při nehodě 

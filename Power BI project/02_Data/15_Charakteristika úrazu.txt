@@ -1,0 +1,47 @@
+kod_poraneni popis_poraneni
+S00-S09	Poranění hlavy 0 Ne  
+S00-S09	Poranění hlavy 1 Ano
+S10-S19	Poranění krku 0 Ne  
+S10-S19	Poranění krku 1 Ano
+S20-S29	Poranění hrudníku 0 Ne
+S20-S29	Poranění hrudníku 1 Ano
+S30-S39	Poranění břicha‚ dolní části zad‚ bederní páteře a pánve 0 Ne
+S30-S39	Poranění břicha‚ dolní části zad‚ bederní páteře a pánve 1 Ano
+S40-S49	Poranění ramene a paže (nadloktí) 0 Ne
+S40-S49	Poranění ramene a paže (nadloktí) 1 Ano
+S50-S59	Poranění lokte a předloktí 0 Ne
+S50-S59	Poranění lokte a předloktí 1 Ano
+S60-S69	Poranění zápěstí a ruky 0 Ne
+S60-S69	Poranění zápěstí a ruky 1 Ano
+S70-S79	Poranění kyčle a stehna 0 Ne
+S70-S79	Poranění kyčle a stehna 1 Ano
+S80-S89	Poranění kolena a bérce 0 Ne
+S80-S89	Poranění kolena a bérce 1 Ano
+S90-S99	Poranění kotníku a nohy pod ním 0 Ne
+S90-S99	Poranění kotníku a nohy pod ním 1 Ano
+T00-T07	Poranění postihující více částí těla 0 Ne
+T00-T07	Poranění postihující více částí těla 1 Ano
+T08-T14	Poranění neurčené části trupu‚ končetiny nebo části těla 0 Ne
+T08-T14	Poranění neurčené části trupu‚ končetiny nebo části těla 1 Ano
+T15-T19	Účinky cizího tělesa vniklého přirozeným otvorem těla 0 Ne
+T15-T19	Účinky cizího tělesa vniklého přirozeným otvorem těla 1 Ano
+T20-T25	Popáleniny a poleptání zevního povrchu těla‚ určené podle lokalizace 0 Ne
+T20-T25	Popáleniny a poleptání zevního povrchu těla‚ určené podle lokalizace 1 Ano
+T26-T28	Popáleniny a poleptání omezené na oko a vnitřní orgány 0 Ne
+T26-T28	Popáleniny a poleptání omezené na oko a vnitřní orgány 1 Ano
+T29-T32	Popáleniny a poleptání mnohočetných a neurčených částí těla 0 Ne
+T29-T32	Popáleniny a poleptání mnohočetných a neurčených částí těla 1 Ano
+T33-T35	Omrzliny 0 Ne
+T33-T35	Omrzliny 1 Ano
+T36-T50	Otrava léky‚ léčivy‚ návykovými a biologickými látkami 0 Ne
+T36-T50	Otrava léky‚ léčivy‚ návykovými a biologickými látkami 1 Ano
+T51-T65	Toxické účinky látek ze zdrojů převážně mimo lékařství 0 Ne
+T51-T65	Toxické účinky látek ze zdrojů převážně mimo lékařství 1 Ano
+T66-T78	Jiné a neurčené účinky vnějších příčin 0 Ne
+T66-T78	Jiné a neurčené účinky vnějších příčin 1 Ano
+T79-T79 Některé časné komplikace úrazů 0 Ne
+T79-T79 Některé časné komplikace úrazů 1 Ano
+T80-T88	Komplikace zdravotní péče nezařazené jinde 0 Ne
+T80-T88	Komplikace zdravotní péče nezařazené jinde 1 Ano
+T90-T98	Následky poranění‚ otravy a jiných následků vnějších příčin 0 Ne
+T90-T98	Následky poranění‚ otravy a jiných následků vnějších příčin 1 Ano

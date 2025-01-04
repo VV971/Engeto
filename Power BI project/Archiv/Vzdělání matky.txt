@@ -1,0 +1,9 @@
+Vzdělání 
+Název parametru: vzdelani 
+Datový typ: numeric 
+Popis parametru: Nejvyšší dokončené vzdělání matky. 
+Možné hodnoty: 
+1) Základní i neukončené 
+2) Střední bez maturity 
+3) Střední i s maturitou 
+4) Vysokoškolské 

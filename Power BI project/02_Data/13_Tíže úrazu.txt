@@ -1,0 +1,12 @@
+13. Tíže úrazu 
+• Název parametru: vaznost 
+• Datový typ: string 
+• Popis parametru: Tíže úrazu daná vykázanou péčí. 
+• Možné hodnoty: 
+o I-a - Úraz ošetřený pouze ambulantně, bez další léčby a následků  
+o I-b - Ambulantní ošetření s následnou léčbou, komplikacemi  
+o II-a - Krátkodobé hospitalizace bez operace, bez komplikací  
+o II-b - Hospitalizace s operací, bez komplikací  
+o II-c - Těžké úrazy s operací a delším pobytem na JIP 
+o II-d - Polytrauma 
+o III-c - Úmrtí bezprostředně při nehodě 

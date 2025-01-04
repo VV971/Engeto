@@ -1,0 +1,20 @@
+6. Kraj bydliště 
+• Název parametru: kraj_pacient 
+• Datový typ: numeric 
+• Popis parametru: Kraj bydliště pacienta. 
+• Možné hodnoty: 
+o CZ010 - Hlavní město Praha 
+o CZ020 - Středočeský kraj 
+o CZ031 - Jihočeský kraj 
+o CZ032 - Plzeňský kraj 
+o CZ041 - Karlovarský kraj 
+o CZ042 - Ústecký kraj 
+o CZ051 - Liberecký kraj 
+o CZ052 - Královéhradecký kraj 
+o CZ053 - Pardubický kraj 
+o CZ063 - Kraj Vysočina 
+o CZ064 - Jihomoravský kraj 
+o CZ071 - Olomoucký kraj 
+o CZ072 - Zlínský kraj 
+o CZ080 - Moravskoslezský kraj 
+o CZ099 – Neznámý kraj 
