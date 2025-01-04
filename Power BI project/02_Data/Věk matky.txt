@@ -1,0 +1,11 @@
+Věk matky 
+Název parametru: vek_matky 
+Datový typ: numeric 
+Popis parametru: Věk matky při porodu. 
+Možné hodnoty: 
+1) -19 
+2) 20–24 
+3) 25–29 
+4) 30–34
+5) 35–39 
+6) 40+

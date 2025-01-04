@@ -1,0 +1,5 @@
+Rok porodu 
+Název parametru: rok_porodu 
+Datový typ: numeric 
+Popis parametru: Kalendářní rok, ve kterém byl porod. 
+Možné hodnoty: Od roku 1994 do posledního uzavřeného roku.

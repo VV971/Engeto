@@ -1,0 +1,19 @@
+Kraj bydliště matky 
+Název parametru: kraj_bydliste 
+Datový typ: string 
+Popis parametru: Kraj bydliště matky. 
+Možné hodnoty: 
+1) CZ010 – Hlavní město Praha 
+2) CZ020 – Středočeský kraj 
+3) CZ031 – Jihočeský kraj 
+4) CZ032 – Plzeňský kraj 
+5) CZ041 – Karlovarský kraj 
+6) CZ042 – Ústecký kraj 
+7) CZ051 – Liberecký kraj 
+8) CZ052 – Královéhradecký kraj 
+9) CZ053 – Pardubický kraj 
+10) CZ063 – Kraj Vysočina 
+11) CZ064 – Jihomoravský kraj 
+12) CZ071 – Olomoucký kraj 
+13) CZ072 – Zlínský kraj 
+14) CZ080 – Moravskoslezský kraj
