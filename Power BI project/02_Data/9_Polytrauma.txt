@@ -1,8 +1,0 @@
-9. Polytrauma 
-• Název parametru: polytrauma 
-• Datový typ: numeric 
-• Popis parametru: Identifikátor, zda došlo k polytraumatu. Polytrauma je identifikované 
-signálním kódem 99980. 
-• Možné hodnoty: 
-0) Ne  
-1) Ano

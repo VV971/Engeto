@@ -1,9 +1,0 @@
-12. Pokračující péče 
-• Název parametru: nasledna_pece 
-• Datový typ: numeric 
-• Popis parametru: Pacient má pro stejnou podkapitolu MKN kapitoly „S00-T98 
-• Poranění‚ otravy a některé jiné následky vnějších příčin“ vykázánu další péči do 60 dní od 
-úrazu. 
-• Možné hodnoty: 
-0) Ne  
-1) Ano

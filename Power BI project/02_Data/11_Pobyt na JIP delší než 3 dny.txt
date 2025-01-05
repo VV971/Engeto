@@ -1,7 +1,0 @@
-11. Pobyt na JIP delší než 3 dny 
-• Název parametru: operace 
-• Datový typ: numeric 
-• Popis parametru: Pobyt na JIP delší než 3 dny. 
-• Možné hodnoty: 
-0) Ne  
-1) Ano 

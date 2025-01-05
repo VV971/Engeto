@@ -1,8 +1,0 @@
-Parita 
-Název parametru: parita 
-Datový typ: numeric 
-Popis parametru: Parita, označení pro počet předchozích těhotenství ukončených 
-porodem.  
-Možné hodnoty: 
-1) Prvorodička 
-2) Vícerodička 

@@ -1,7 +1,0 @@
-10. Operace 
-• Název parametru: operace 
-• Datový typ: numeric 
-• Popis parametru: Operace za hospitalizace z důvodu úrazu. 
-• Možné hodnoty: 
-0) Ne  
-1) Ano

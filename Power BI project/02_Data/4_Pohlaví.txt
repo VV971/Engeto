@@ -1,8 +1,0 @@
-4. Pohlaví 
-• Název parametru: pohlavi 
-• Datový typ: string 
-• Popis parametru: Pohlaví pacienta. 
-• Možné hodnoty: 
-o 1 – muž 
-o 2 – žena 
-o 99 – neuvedeno
